@@ -1,25 +1,42 @@
 import '../app/globals.css'
-import Navigation from '../app/components/Navigation'
-import Link from 'next/link'
-import Image from 'next/image'
+
+import Header from '../app/components/Header'
 
 const Oferta = () => {
 	return (
-		<card>
-			<Navigation />
-			<div className='flex min-h-screen flex-col items-center  p-24'>
-				<Link href='/'>
-					<Image
-						className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert'
-						src='/logo.png'
-						alt='keres logo'
-						width={120}
-						height={120}
-						priority
-					/>
-					
-				</Link>
-				O nas
+		<card className='min-h-screen'>
+			<Header logoWidth={60} logoHeight={60} />
+			<div className='bg-white mx-10 my-5 px-2 py-8 rounded text-center border-2 border-gray-600'>
+				<div className='text-xl uppercase font-bold pb-4'>O FIRMIE</div>
+				<div className='text-lg italic'>Dobry interes z firmą KERES!</div>
+				<div className='text-sm py-4 px-6 text-center'>
+					Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą są
+					transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym celem jest stały
+					rozwój oferty i podnoszenie jakości usług oferowanych klientom. Rozwijamy zaplecze
+					spedycyjno-logistyczne, stale powiększamy również naszą flotę samochodową oraz zespół pracowników.
+				</div>
+			</div>
+			<div className='bg-white mx-10 my-5 px-2 py-8 rounded text-center border-2 border-gray-600'>
+				<div className='text-xl uppercase font-bold pb-4'>Title</div>
+				<div className='text-lg'>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, similique?
+				</div>
+				<div className='text-sm py-4 px-6 text-center'>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid obcaecati voluptatem rem minima
+					quis hic repellendus sunt. Placeat, reprehenderit est?
+				</div>
+				<div className='text-xs font-bold'>Lorem ipsum dolor sit amet.</div>
+			</div>
+			<div className='bg-white mx-10 my-5 px-2 py-8 rounded text-center border-2 border-gray-600'>
+				<div className='text-xl uppercase font-bold pb-4'>Title</div>
+				<div className='text-lg'>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, similique?
+				</div>
+				<div className='text-sm py-4 px-6 text-center'>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid obcaecati voluptatem rem minima
+					quis hic repellendus sunt. Placeat, reprehenderit est?
+				</div>
+				<div className='text-xs font-bold'>Lorem ipsum dolor sit amet.</div>
 			</div>
 		</card>
 	)

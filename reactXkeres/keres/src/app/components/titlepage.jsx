@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const TitlePage = () => {
 	return (
 		<div className='flex min-h-screen flex-col items-center rounded-lg p-10 '>

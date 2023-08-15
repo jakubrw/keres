@@ -23,8 +23,8 @@ const Navbar = () => {
 				/>
 			</div>
 			{isOpen && (
-				<nav className='fixed top-0 left-0 h-4/6 w-full bg-yellow-300 '>
-					<div className='flex flex-row justify-between'>
+				<navbar className='fixed top-0 left-0 h-auto w-full bg-yellow-300 '>
+					<closeicon className='flex flex-row justify-between'>
 						<Image
 							className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert m-2'
 							src='/x.svg'
@@ -34,35 +34,47 @@ const Navbar = () => {
 							priority
 							onClick={handleMenuClick}
 						/>
-					</div>
-					<div className='grid justify-items-center m-0'>
-						<div>
+					</closeicon>
+					<nav className='grid justify-items-center m-0' onClick={handleMenuClick}>
+						<logo>
 							<Link href='/'>
 								<Image
 									className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert m-5'
-									src='/image2vector.svg'
+									src='/keresik.svg'
 									alt='keres logo'
 									width={80}
 									height={80}
 									priority
+									onClick={handleMenuClick}
 								/>
 							</Link>
-						</div>
-						<div>
-							<ul className='text-2xl font-bold text-center uppercase'>
-								<li>
-									<Link href={`/oferta`}>Oferta</Link>
+						</logo>
+						<navlinks className='my-1 px-10 py-12 border-2 border-amber-900 rounded '>
+							<ul className='space-y-2 text-2xl font-bold text-center uppercase'>
+								<li className='hover:bg-white w-60 h-16 py-4 border-b-2 border-amber-900'>
+									<Link href={`/`} onClick={handleMenuClick}>
+										Home
+									</Link>
 								</li>
-								<li>
-									<Link href={`/about`}>O nas</Link>
+								<li className='hover:bg-white w-60 h-16 py-4 border-b-2 border-amber-900'>
+									<Link href={`/about`} onClick={handleMenuClick}>
+										O nas
+									</Link>
 								</li>
-								<li>Lorem</li>
-								<li>ipsum</li>
-								<li>dolor</li>
+								<li className='hover:bg-white w-60 h-16 py-4 border-b-2 border-amber-900'>
+									<Link href={`/oferta`} onClick={handleMenuClick}>
+										Oferta
+									</Link>
+								</li>
+								<li className='hover:bg-white w-60 h-16 py-4'>
+									<Link href={`/oferta`} onClick={handleMenuClick}>
+										Kontakt
+									</Link>
+								</li>
 							</ul>
-						</div>
-					</div>
-				</nav>
+						</navlinks>
+					</nav>
+				</navbar>
 			)}
 		</nav>
 	)
