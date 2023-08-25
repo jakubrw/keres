@@ -1,10 +1,12 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import TitlePage from './components/titlepage'
+import TitlePage from './components/Titlepage'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Counter from './components/Counter'
+import Leaflet from './components/Leaflet'
 
 export default function Home() {
 	return (
@@ -31,7 +33,12 @@ export default function Home() {
 				</div>
 				<div className='text-xs font-bold'>Więcej o naszej ofercie</div>
 			</div>
-			<Counter/>
+			<div className='bg-white mx-10 my-10 px-10 py-8 rounded text-center border-2 border-gray-600'>
+				<Counter before={'Przejechaliśmy'} valueCounter={12000000} after={'kilometrów.'} />
+			</div>
+			<div className='bg-white mx-10 my-10 px-10 py-8 rounded text-center border-2 border-gray-600 h-200px'>
+				<Leaflet/>
+			</div>
 			<Footer />
 		</main>
 	)
