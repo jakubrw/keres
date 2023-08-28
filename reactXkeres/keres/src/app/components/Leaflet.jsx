@@ -11,7 +11,7 @@ const customIcon = new Icon({
 
 const Leaflet = () => {
 	return (
-		<MapContainer center={position} zoom={16} scrollWheelZoom={false}>
+		<MapContainer center={position} zoom={16} scrollWheelZoom={false} className='z-0'>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

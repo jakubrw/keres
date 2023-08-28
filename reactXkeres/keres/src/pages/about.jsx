@@ -5,7 +5,7 @@ import Header from '../app/components/Header'
 const Oferta = () => {
 	return (
 		<card className='min-h-screen'>
-			<Header logoWidth={60} logoHeight={60} />
+			<Header logoWidth={30} logoHeight={30} />
 			<div className='bg-white mx-10 my-5 px-2 py-8 rounded text-center border-2 border-gray-600'>
 				<div className='text-xl uppercase font-bold pb-4'>O FIRMIE</div>
 				<div className='text-lg italic'>Dobry interes z firmą KERES!</div>

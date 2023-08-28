@@ -6,6 +6,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
+			<link rel='shortcut icon' href='/static/favicon.ico'></link>
 			<body>{children}</body>
 		</html>
 	)
