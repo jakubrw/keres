@@ -23,8 +23,8 @@ const Navbar = () => {
 				/>
 			</div>
 			{isOpen && (
-				<navbar className='fixed top-0 left-0 h-auto w-full bg-yellow-300 '>
-					<closeicon className='flex flex-row justify-between'>
+				<div className='fixed top-0 left-0 h-auto w-full bg-yellow-300 '>
+					<div className='flex flex-row justify-between'>
 						<Image
 							className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert m-2'
 							src='/x.svg'
@@ -34,9 +34,9 @@ const Navbar = () => {
 							priority
 							onClick={handleMenuClick}
 						/>
-					</closeicon>
+					</div>
 					<nav className='grid justify-items-center m-0' onClick={handleMenuClick}>
-						<logo>
+						<div>
 							<Link href='/'>
 								<Image
 									className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert m-5'
@@ -48,8 +48,8 @@ const Navbar = () => {
 									onClick={handleMenuClick}
 								/>
 							</Link>
-						</logo>
-						<navlinks className='my-1 px-10 py-12 border-2 border-amber-900 rounded '>
+						</div>
+						<div className='my-1 px-10 py-12 border-2 border-amber-900 rounded '>
 							<ul className='space-y-2 text-2xl font-bold text-center uppercase'>
 								<li className='hover:bg-white w-60 h-16 py-4 border-b-2 border-amber-900'>
 									<Link href={`/`} onClick={handleMenuClick}>
@@ -72,9 +72,9 @@ const Navbar = () => {
 									</Link>
 								</li>
 							</ul>
-						</navlinks>
+						</div>
 					</nav>
-				</navbar>
+				</div>
 			)}
 		</nav>
 	)

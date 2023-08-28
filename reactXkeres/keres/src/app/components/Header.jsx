@@ -7,7 +7,7 @@ const Header = ({ logoWidth, logoHeight }) => {
 	return (
 		<header>
 			<Navigation />
-			<icon className='flex flex-col items-center pt-10 pb-2'>
+			<div className='flex flex-col items-center pt-10 pb-2'>
 				<Link href='/'>
 					<Image
 						className='relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert z-0'
@@ -18,7 +18,7 @@ const Header = ({ logoWidth, logoHeight }) => {
 						priority
 					/>
 				</Link>
-			</icon>
+			</div>
 		</header>
 	)
 }

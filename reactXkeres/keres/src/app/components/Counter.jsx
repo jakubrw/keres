@@ -1,44 +1,50 @@
 'use client'
-const Counter = () => {
-	const counterNumber = (endingNumber, time, loop) => {
-		let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-		for (let i = 0; i < numbers.length; i++) {
-			const endingNumber = numbers[i]
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+import 'odometer/themes/odometer-theme-default.css'
+import 'odometer/themes/odometer-theme-car.css'
+
+let loadedCallback = null
+let loaded = false
+
+const Odometer = dynamic(
+	async () => {
+		const mod = await import('react-odometerjs')
+		loaded = true
+		if (loadedCallback != null) {
+			loadedCallback()
 		}
+		return mod
+	},
+	{
+		ssr: false,
+		loading: () => 0,
 	}
+)
+
+const Counter = ({before,valueCounter,after}) => {
+	const [odometerLoaded, setOdometerLoaded] = useState(loaded)
+	const [odometerValue, setOdometerValue] = useState(0)
+
+	loadedCallback = () => {
+		setOdometerLoaded(true)
+	}
+
+	useEffect(() => {
+		if (odometerLoaded) {
+			setOdometerValue(1)
+		}
+	}, [odometerLoaded])
+
+	useEffect(() => {
+		setOdometerValue(valueCounter)
+	}, [odometerValue])
+
 	return (
 		<div>
-			<div className='bg-white mx-10 my-10 px-10 py-8 rounded text-center border-2 border-gray-600'>
-				<div>Zaufało nam już</div>
-				<div className='flex'>
-					<div
-						id='counter-1'
-						className='border-2 border-gray-800 rounded-l w-full h-14 grid items-center text-3xl font-black'>
-						1
-					</div>
-					<div
-						id='counter-2'
-						className='border-y-2 border-gray-800 w-full h-14 grid items-center text-3xl font-black'>
-						2
-					</div>
-					<div
-						id='counter-3'
-						className='border-2 border-gray-800 w-full h-14 grid items-center text-3xl font-black'>
-						3
-					</div>
-					<div
-						id='counter-4'
-						className='border-y-2 border-gray-800 w-full h-14 grid items-center text-3xl font-black'>
-						4
-					</div>
-					<div
-						id='counter-5'
-						className='border-2 border-gray-800 rounded-r w-full h-14 grid items-center text-3xl font-black text-white bg-black'>
-						5
-					</div>
-				</div>
-				<div>klientów</div>
-			</div>
+			<div>{before}</div>
+			<Odometer value={odometerValue} theme={'default'} auto='true' />
+			<div>{after}</div>
 		</div>
 	)
 }
