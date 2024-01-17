@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { UsersIcon, TruckIcon, FolderArrowDownIcon, PhoneIcon, TagIcon } from '@heroicons/react/24/outline'
+
+import ContactForm from '@/app/components/ContactForm'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -11,6 +12,7 @@ const Navbar = () => {
 
 	const handleMenuClick = () => {
 		setIsOpen(!isOpen)
+		
 	}
 
 	const handleFormClick = () => {
@@ -72,47 +74,49 @@ const Navbar = () => {
 						<div className='my-1 px-10 py-1 row-span-4'>
 							<ul className='space-y-1 text-2xl font-bold text-center uppercase '>
 								<li className='w-60 h-16 py-4 '>
-									<Link
-										href={`/team`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<UsersIcon className='h-5 font-bold' />
+									<Link href={`/team`} onClick={handleMenuClick}>
 										zespół
 									</Link>
 								</li>
-								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/oferta`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<TagIcon className='h-5' />
-										oferta
-									</Link>
+								<li className='w-60 h-10 py-4 flex flex-col items-center'>
+									<Link href={`/oferta`}>Oferta</Link>
 								</li>
+								{isOpenOffert && (
+									<li className='w-60 h-50 py-4 flex flex-col text-lg'>
+										<Link href={`/oferta/transport`}>Transport</Link>
 
+										<Link href={`/oferta/spedycja`}>Spedycja</Link>
+
+										<Link href={`/oferta/odprawy`}>Odprawy celne</Link>
+
+										<Link href={`/oferta/ubezpieczenia`}>Ubezpieczenia Cargo</Link>
+
+										<Link href={`/oferta/doradztwo`}>Doradztwo</Link>
+									</li>
+								)}
+								<li className='flex justify-center items-center'>
+									<Image
+										onClick={handleOffertClick}
+										className='relative z-0 '
+										src='/chevron-double-down.svg'
+										alt='keres logo'
+										width='30'
+										height='30'
+									/>
+								</li>
 								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/flota`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<TruckIcon className='h-5' />
+									<Link href={`/flota`} onClick={handleMenuClick}>
 										flota
 									</Link>
 								</li>
 								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/files`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<FolderArrowDownIcon className='h-5' /> pliki
+									<Link href={`/files`} onClick={handleMenuClick}>
+										Pliki
 									</Link>
 								</li>
 								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/contact`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<PhoneIcon className='h-5'></PhoneIcon>Kontakt
+									<Link href={`/contact`} onClick={handleMenuClick}>
+										Kontakt
 									</Link>
 								</li>
 							</ul>

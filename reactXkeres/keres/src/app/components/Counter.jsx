@@ -43,7 +43,7 @@ const Counter = ({before,valueCounter,after}) => {
 	return (
 		<div>
 			<div>{before}</div>
-			<Odometer value={odometerValue} theme={'default'} auto='true' />
+			<Odometer value={odometerValue} theme={'car'} auto='true' />
 			<div>{after}</div>
 		</div>
 	)
