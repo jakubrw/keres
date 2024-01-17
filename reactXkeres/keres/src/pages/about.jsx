@@ -2,7 +2,7 @@ import '../app/globals.css'
 
 import Header from '../app/components/Header'
 
-const Oferta = () => {
+const About = () => {
 	return (
 		<card className='min-h-screen'>
 			<Header logoWidth={30} logoHeight={30} />
@@ -42,4 +42,4 @@ const Oferta = () => {
 	)
 }
 
-export default Oferta
+export default About
