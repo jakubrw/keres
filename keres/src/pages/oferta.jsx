@@ -2,16 +2,24 @@
 import CardOffert from '@/app/components/CardOffert'
 import Header from '../app/components/Header'
 import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper/modules'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
 const Oferta = () => {
 	return (
-		<div className='h-screen w-screen '>
+		<div className='min-h-screen w-screen '>
 			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} />
 			<img src='svg/offer.svg' alt='' className='px-10 my-2' />
-			<div>
+			<img src='svg/contact.svg' alt='' className='px-10 my-2' />
+			<img src='svg/files.svg' alt='' className='px-10 my-2' />
+			<img src='svg/main.svg' alt='' className='px-10 my-2' />
+			<img src='svg/team.svg' alt='' className='px-10 my-2' />
+			<img src='svg/trolley.svg' alt='' className='px-10 my-2' />
+
+			
+
+			{/* <div>
 				Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu. Oferujemy nasze sprawdzone
 				rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze oferty transportowe, usprawnimy
 				proces logistyczny, dostarczymy towar na czas. Współpracujemy z wiarygodnymi podwykonawcami na zasadach
@@ -74,7 +82,7 @@ const Oferta = () => {
 						/>
 					</SwiperSlide>
 				</Swiper>
-			</div>
+			</div> */}
 		</div>
 	)
 }

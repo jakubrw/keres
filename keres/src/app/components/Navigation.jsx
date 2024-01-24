@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { UsersIcon, TruckIcon, FolderArrowDownIcon, PhoneIcon, TagIcon } from '@heroicons/react/24/outline'
+import { UsersIcon, TruckIcon, FolderArrowDownIcon, PhoneIcon, TagIcon , ExclamationTriangleIcon} from '@heroicons/react/24/outline'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -73,7 +73,7 @@ const Navbar = () => {
 							<ul className='space-y-1 text-2xl font-bold text-center uppercase '>
 								<li className='w-60 h-16 py-4 '>
 									<Link
-										href={`/team`}
+										href={`/`}
 										onClick={handleMenuClick}
 										className='flex flex-row items-center justify-center'>
 										<UsersIcon className='h-5 font-bold' />
@@ -86,13 +86,13 @@ const Navbar = () => {
 										onClick={handleMenuClick}
 										className='flex flex-row items-center justify-center'>
 										<TagIcon className='h-5' />
-										oferta
+										grafiki
 									</Link>
 								</li>
 
 								<li className='w-60 h-16 py-4'>
 									<Link
-										href={`/flota`}
+										href={`/`}
 										onClick={handleMenuClick}
 										className='flex flex-row items-center justify-center'>
 										<TruckIcon className='h-5' />
@@ -109,7 +109,7 @@ const Navbar = () => {
 								</li> */}
 								<li className='w-60 h-16 py-4'>
 									<Link
-										href={`/contact`}
+										href={`/`}
 										onClick={handleMenuClick}
 										className='flex flex-row items-center justify-center'>
 										<PhoneIcon className='h-5'></PhoneIcon>Kontakt
@@ -136,7 +136,10 @@ const Navbar = () => {
 					<nav className='fixed pt-5 bottom-0 mt-[100px] ml-[-50%] w-[200%] rounded-t-[100%] bg-lime-400 h-5/6'>
 						<div className='flex flex-col items-center justify-between gap-y-2 m-0 h-full'>
 							<div className='uppercase font-black text-2xl pt-5'>Napisz do nas!</div>
-
+							<div className='flex flex-col items-center'>
+								<ExclamationTriangleIcon className='h-10 text-red-500' />
+								<p className='text font-light'>(in progress)</p>
+							</div>
 							<div className='flex flex-col '>
 								<div className='flex justify-between h-3/4 w-screen'>
 									<div

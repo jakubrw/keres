@@ -1,19 +1,28 @@
 import LeafletDynamic from './LeafletDynamic'
-import { MapPinIcon, AtSymbolIcon } from '@heroicons/react/24/outline'
+import { GlobeAltIcon } from '@heroicons/react/24/outline'
+
 const Footer = () => {
 	return (
 		<div className='py-2 bg-gray-200 flex flex-col items-center text-sm w-full'>
 			<div className='h-8'>
 				<p className='text-lg font-bold uppercase font-mono'>Znajdź nas</p>
 			</div>
-			<div className='grid grid-cols-6 grid-rows-3'>
-				<MapPinIcon className='h-4 w-4 col-span-1' />
-				<div className='col-span-5'>
-					<p>Gdańsk</p>
-					<p>Grunwaldzka 219/9</p>
+			<div className='flex gap-10'>
+				<div className='border-2 border-black rounded-full h-auto w-auto'>
+					<GlobeAltIcon height={50} width={50}></GlobeAltIcon>
 				</div>
-				<AtSymbolIcon className='h-4 w-4 col-span-1' />
-				<p className='col-span-5'>keres@keres.pl</p>
+				<div className='border-2 border-black rounded-full h-auto w-auto'>
+					<GlobeAltIcon height={50} width={50}></GlobeAltIcon>
+				</div>
+				<div className='border-2 border-black rounded-full h-auto w-auto'>
+					<GlobeAltIcon height={50} width={50}></GlobeAltIcon>
+				</div>
+				<div className='border-2 border-black rounded-full h-auto w-auto'>
+					<GlobeAltIcon height={50} width={50}></GlobeAltIcon>
+				</div>
+				<div className='border-2 border-black rounded-full h-auto w-auto'>
+					<GlobeAltIcon height={50} width={50}></GlobeAltIcon>
+				</div>
 			</div>
 			<div className='p-2 w-full rounded-xl overflow-hidden'>
 				<LeafletDynamic />
