@@ -9,7 +9,7 @@ const Home = () => {
 
 	useEffect(() => {
 		const setupBeforeRender = () => {
-			console.log('Operacje przed renderem')
+			
 		}
 
 		setupBeforeRender()
@@ -26,7 +26,7 @@ const Home = () => {
 	}, [])
 
 	return (
-		<main className='h-screen'>
+		<main className=''>
 			{windowWidth > 700 ? (
 				<p>otwórz na urządzeniu mobilnym</p>
 			) : (

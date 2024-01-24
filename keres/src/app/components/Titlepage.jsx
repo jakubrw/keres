@@ -1,18 +1,30 @@
+'use client'
 import Image from 'next/image'
+
+import Counter from './Counters/Counter'
+import Counter2 from './Counters/Counter2'
+import Counter3 from './Counters/Counter3'
+import Counter4 from './Counters/Counter4'
+import Footer from './Footer'
+
 import Typewriter from 'typewriter-effect'
-import LeafletDynamic from '@/app/components/LeafletDynamic'
-import Counter from './Counter'
-import {PhotoIcon} from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
+import { PhotoIcon } from '@heroicons/react/24/outline'
 
 const TitlePage = () => {
 	return (
-		<div className=''>
-			<section className='h-screen flex flex-col place-items-center justify-between pt-10'>
-				<Image className='relative' src='/logo.svg' alt='keres logo' width={200} height={200} priority />
-				<div className='h-1/2 w-3/4 ring-1 ring-slate-900/5 rounded-lg bg-white bg-opacity-20 backdrop-blur-lg rounded flex justify-center place-items-center'>
-					<PhotoIcon className='h-20 text-neutral-600'/>
-				</div>
-				<div className='flex justify-center px-8 py-2  text-center'>
+		<div className='h-auto flex flex-col place-items-center'>
+			<motion.div
+				animate={{ height: '20vh' }}
+				transition={{ type: 'circIn', delay: 1, duration: 3 }}
+				className='h-screen w-96 bg-r-700 relative mt-4'>
+				<Image className='relative' src='/logo.svg' alt='keres logo' fill />
+			</motion.div>
+			<section className='h-[80vh] flex flex-col place-items-center justify-end'>
+				{/* <div className='h-1/2 w-3/4 ring-1 ring-slate-900/5 rounded-lg bg-white bg-opacity-20 backdrop-blur-lg rounded flex justify-center place-items-center'>
+					<PhotoIcon className='h-20 text-neutral-600' />
+				</div> */}
+				<div className='flex justify-center px-6 py-1 text-center text-xl mb-32'>
 					Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo obdarzają
 					jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
 				</div>
@@ -34,7 +46,7 @@ const TitlePage = () => {
 					/>
 				</div>
 			</section>
-			<section className='h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px'>
+			<section className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px'>
 				<div className='flex min-h-screen flex-col items-center rounded-lg p-10 px-5 pb-12'>
 					<div className=''>
 						<div className='text-center mb-5'>
@@ -44,13 +56,27 @@ const TitlePage = () => {
 							spedycyjno-logistyczne, stale powiększamy naszą flotę samochodową oraz zespół pracowników.
 						</div>
 
-						<div className='ring-1 ring-slate-900/5 rounded-lg bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg space-y-3 text-lg px-8 py-6 text-center '>
-							<Counter valueCounter={10000} idCounter={1} />
-							<p>Przejechanych kilometrów </p>
-							<Counter valueCounter={3000} idCounter={2} />
-							<p>Zleceń</p>
-							<Counter valueCounter={2190} idCounter={3} />
-							<p>Dni razem</p>
+						<div className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
+							<Counter id={1} valueCounter={5000} className='text-6xl' />
+							<p className='text-lg'>Przejechanych kilometrów </p>
+							<Counter2 id={2} valueCounter={3000} />
+							<p className='text-lg'>Zleceń</p>
+							<Counter3 id={3} valueCounter={2190} />
+							<p className='text-lg'>Dni razem</p>
+						</div>
+
+						<div className='ring-1 ring-slate-900/5 h-96 bg-white bg-opacity-40 backdrop-blur-xl w-full overflow-hidden relative rounded-lg'>
+							<Image
+								src='/svg/map.svg'
+								fill={true}
+								className='object-cover h-full w-full blur-[2px]'
+								alt='Map of countries visited by company'></Image>
+							<div className='h-full b-full backdropblur-xl'>
+								<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-center'>
+									<Counter4 id={4} valueCounter={26} />
+									<p className='text-lg pt-2'>Odzwiedzonych krajów</p>
+								</div>
+							</div>
 						</div>
 						<div className='text-center mt-10 text-sm'>
 							Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
@@ -60,10 +86,7 @@ const TitlePage = () => {
 					</div>
 				</div>
 			</section>
-			<section className='border-t-2 flex flex-col items-center p-10'>
-				<h3 className='text-lg font-semibold'>Znajdź nas!</h3>
-				<LeafletDynamic className='h-20 w-20' />
-			</section>
+			<Footer />
 		</div>
 	)
 }

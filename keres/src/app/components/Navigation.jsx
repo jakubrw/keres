@@ -23,7 +23,7 @@ const Navbar = () => {
 
 	return (
 		<nav id='nav' className='navbar fixed bottom-0 w-full z-20 '>
-			<div className='menu-icon flex justify-between h-20 '>
+			<div className='menu-icon flex justify-between h-[20px] '>
 				<div
 					className={`absolute bottom-0  h-16 w-16  bg-yellow-300 rounded-tr-full ${isOpen ? 'open' : ''}`}
 					onClick={handleMenuClick}>
@@ -75,16 +75,16 @@ const Navbar = () => {
 									<Link
 										href={`/team`}
 										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
+										className='flex flex-row items-center justify-center'>
 										<UsersIcon className='h-5 font-bold' />
-										zespół
+										kariera
 									</Link>
 								</li>
 								<li className='w-60 h-16 py-4'>
 									<Link
 										href={`/oferta`}
 										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
+										className='flex flex-row items-center justify-center'>
 										<TagIcon className='h-5' />
 										oferta
 									</Link>
@@ -94,24 +94,24 @@ const Navbar = () => {
 									<Link
 										href={`/flota`}
 										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
+										className='flex flex-row items-center justify-center'>
 										<TruckIcon className='h-5' />
 										flota
 									</Link>
 								</li>
-								<li className='w-60 h-16 py-4'>
+								{/* <li className='w-60 h-16 py-4'>
 									<Link
 										href={`/files`}
 										onClick={handleMenuClick}
 										className='flex flex-row items-center justify-items-center'>
 										<FolderArrowDownIcon className='h-5' /> pliki
 									</Link>
-								</li>
+								</li> */}
 								<li className='w-60 h-16 py-4'>
 									<Link
 										href={`/contact`}
 										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
+										className='flex flex-row items-center justify-center'>
 										<PhoneIcon className='h-5'></PhoneIcon>Kontakt
 									</Link>
 								</li>
