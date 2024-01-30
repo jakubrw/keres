@@ -6,6 +6,7 @@ import 'odometer/themes/odometer-theme-car.css'
 
 let loadedCallback = null
 let loaded = false
+const ArrayCounter = [2000, 3000, 2190]
 
 const Odometer = dynamic(
 	async () => {
@@ -22,7 +23,7 @@ const Odometer = dynamic(
 	}
 )
 
-const Counter2 = ({before,valueCounter,after}) => {
+const Counter2 = ({before, valueCounter, after}) => {
 	const [odometerLoaded, setOdometerLoaded] = useState(loaded)
 	const [odometerValue, setOdometerValue] = useState(0)
 

@@ -13,7 +13,12 @@ const customIcon = new Icon({
 
 const Leaflet = () => {
 	return (
-		<MapContainer center={position} zoom={16} scrollWheelZoom={false} className='z-0'>
+		<MapContainer
+			center={position}
+			zoom={16}
+			scrollWheelZoom={false}
+			className='z-0'
+			style={{ height: '100%', minHeight: '50px' }}>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

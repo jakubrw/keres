@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { UsersIcon, TruckIcon, FolderArrowDownIcon, PhoneIcon, TagIcon , ExclamationTriangleIcon} from '@heroicons/react/24/outline'
+import { UsersIcon, TruckIcon, PhoneIcon, TagIcon , ExclamationTriangleIcon} from '@heroicons/react/24/outline'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
