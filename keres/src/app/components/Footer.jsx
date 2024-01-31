@@ -32,6 +32,7 @@ const Footer = () => {
 			</div>
 			<div className='pt-8'>
 				<p className='text-center text-xs text-gray-500 '>© KERES.PL 2023 X JRW</p>
+				<p></p>
 			</div>
 		</div>
 	)

@@ -20,22 +20,27 @@ const TitlePage = () => {
 		<div className='h-auto flex flex-col place-items-center'>
 			<motion.div
 				initial={{ height: '100vh' }}
-				animate={{ height: '15vh' }}
+				animate={{ height: '12vh' }}
 				transition={{ type: 'circIn', delay: 1, duration: 3 }}
-				className=' w-screen bg-r-700 relative mt-4 mb-[5vh]'>
+				className=' w-screen bg-r-700 relative mt-4 mb-[1vh]'>
 				<Image className='relative' src='/logo.svg' alt='keres logo' fill />
 			</motion.div>
-			<section className='h-[80vh] flex flex-col place-items-center justify-end'>
-				<div className='h-2/3 w-3/4 ring-1 ring-slate-900/5 rounded-lg bg-white bg-opacity-20 backdrop-blur-lg rounded flex justify-center place-items-center'>
-					<PhotoIcon className='h-20 text-neutral-600' />
+			<section className='h-[80vh] flex flex-col place-items-center justify-end '>
+				<div className='h-3/4 w-full flex justify-center place-items-center relative bg-blend-hue'>
+					<div className='backdrop-opacity-0 z-10 absolute bottom-0  bg-gradient-to-b from-transparent from-0% to-zinc-200 to-20% pt-5'>
+						<h2 className='text-center text-xl font-medium'>
+							Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo
+							obdarzają jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
+						</h2>
+					</div>
+					<div className='mx-5 h-full w-full relative'>
+						<Image alt='graphic image of company' src='/graphics/Company.svg' fill />
+					</div>
 				</div>
-				<div className='justify-self-center px-6 py-1 text-center text-xl'>
-					Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo obdarzają
-					jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
-				</div>
+				<div className='justify-self-center px-6 py-1 text-center text-xl'></div>
+
 				<div className='w-screen h-2/3 bg-[url(/waves.svg)]  bg-no-repeat bg-bottom flex flex-col place-items-center justify-center justify-self-end'>
 					<Typewriter
-						className='text-xl text-red-700'
 						options={{
 							strings: ['Dobry interes z firmą <strong>KERES!</strong>', 'Zobacz więcej!'],
 							autoStart: true,
@@ -50,7 +55,7 @@ const TitlePage = () => {
 				className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px'>
 				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-10 px-5 pb-12'>
 					<div className=''>
-						<div className='text-center mb-5'>
+						<div className='text-center mb-5 antialiased'>
 							Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą są
 							transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym celem jest
 							stały rozwój oferty i podnoszenie jakości usług oferowanych klientom. Rozwijamy zaplecze
@@ -63,20 +68,19 @@ const TitlePage = () => {
 							<Counter2 valueCounter={3000} />
 							<p className='text-lg'>Zleceń</p>
 							<Counter3 valueCounter={2190} />
-							<p className='text-lg'>Dni razem</p>
+							<p className='text-lg font-bold uppercase'>Dni razem</p>
 						</div>
 
-						<div className='ring-1 ring-slate-900/5 h-96 bg-white bg-opacity-40 backdrop-blur-xl w-full overflow-hidden relative rounded-lg'>
+						<div className='ring-1 ring-slate-900/5 h-48 bg-white bg-opacity-40 backdrop-blur-xl w-full overflow-hidden relative rounded-lg'>
 							<Image
 								src='/svg/map.svg'
 								fill={true}
 								className='object-cover h-full w-full blur-[2px]'
 								alt='Map of countries visited by company'></Image>
-							<div className='h-full b-full backdropblur-xl'>
-								<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-center'>
-									<Counter4 id={4} valueCounter={26} />
-									<p className='text-lg pt-2'>Odzwiedzonych krajów</p>
-								</div>
+
+							<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-center'>
+								<Counter4 id={4} valueCounter={26} />
+								<p className='text-lg pt-2'>Odzwiedzonych krajów</p>
 							</div>
 						</div>
 						<div className='text-center mt-10 text-sm'>
