@@ -6,7 +6,6 @@ import 'odometer/themes/odometer-theme-car.css'
 
 let loadedCallback = null
 let loaded = false
-const ArrayCounter = [2000, 3000, 2190]
 
 const Odometer = dynamic(
 	async () => {
@@ -23,29 +22,29 @@ const Odometer = dynamic(
 	}
 )
 
-const Counter = ({ before, valueCounter, after }) => {
+const Counter = ({ valueCounter, state, delay }) => {
 	const [odometerLoaded, setOdometerLoaded] = useState(loaded)
 	const [odometerValue, setOdometerValue] = useState(0)
 
 	loadedCallback = () => {
-		setOdometerLoaded(true)
+		if (state == true) {
+			setOdometerLoaded(true)
+		}
 	}
 
 	useEffect(() => {
-		if (odometerLoaded) {
-			setOdometerValue(1)
-		}
+		setOdometerValue(parseInt('0'.repeat(String(valueCounter).length)))
 	}, [odometerLoaded])
 
-	useEffect(() => {
-		setOdometerValue(valueCounter)
-	}, [odometerValue])
+	if (state == true) {
+		setTimeout(() => {
+			setOdometerValue(valueCounter)
+		}, delay)
+	}
 
 	return (
 		<div>
-			<div>{before}</div>
 			<Odometer value={odometerValue} theme={'car'} auto='true' />
-			<div>{after}</div>
 		</div>
 	)
 }

@@ -10,16 +10,8 @@ const Oferta = () => {
 	return (
 		<div className='min-h-screen w-screen '>
 			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} />
-			<img src='svg/offer.svg' alt='' className='px-10 my-2' />
-			<img src='svg/contact.svg' alt='' className='px-10 my-2' />
-			<img src='svg/files.svg' alt='' className='px-10 my-2' />
-			<img src='svg/main.svg' alt='' className='px-10 my-2' />
-			<img src='svg/team.svg' alt='' className='px-10 my-2' />
-			<img src='svg/trolley.svg' alt='' className='px-10 my-2' />
 
-			
-
-			{/* <div>
+			<div>
 				Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu. Oferujemy nasze sprawdzone
 				rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze oferty transportowe, usprawnimy
 				proces logistyczny, dostarczymy towar na czas. Współpracujemy z wiarygodnymi podwykonawcami na zasadach
@@ -32,9 +24,6 @@ const Oferta = () => {
 				instrukcji zleceniodawcy.
 			</div>
 			<div className='py-10 px-2 '>
-				<div>
-					<h3 className='font-bold text-center'>Nasza oferta</h3>
-				</div>
 				<Swiper
 					modules={[Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]}
 					spaceBetween={0}
@@ -42,12 +31,12 @@ const Oferta = () => {
 					loop={true}
 					effect='coverflow'
 					centeredSlides={'true'}
-					className='h-auto w-3/4'>
+					className='h-auto w-full'>
 					<SwiperSlide>
 						<CardOffert
 							cardTitle={'Doradztwo transportowe'}
 							cardText={
-								'Nasze usługi doradztwa transportowego to klucz do optymalizacji i efektywności Twojego łańcucha dostaw. Dzięki doświadczonym ekspertom, oferujemy spersonalizowane strategie transportowe, które pomagają zminimalizować koszty, zoptymalizować trasę i zwiększyć ogólną wydajność logistyczną Twojego biznesu.'
+								'Nasze doświadczenie pozwala analizować i wybierać najlepsze opcje przewozu. Spedytorzy są zawsze gotowi pomóc w nietypowych sytuacjach, trzymając rękę na pulsie transportu.'
 							}
 							cardLink={'oferta/doradztwo'}
 						/>
@@ -56,7 +45,7 @@ const Oferta = () => {
 						<CardOffert
 							cardTitle={'Odprawy Celne'}
 							cardText={
-								'Zapewniamy profesjonalne usługi odpraw celnych, eliminując wszelkie trudności związane z procedurami celno-skarbowymi. Nasz zespół specjalistów dba o sprawną i zgodną z przepisami odprawę, gwarantując, że Twoje przesyłki bezpiecznie i szybko przekraczają granice.'
+								'Realizujemy transport poza UE, mając podpisaną umowę z agencją celną. Nasi eksperci monitorują zmiany w kodeksach prawa, gwarantując bieżącą reakcję na ewentualne modyfikacje.'
 							}
 						/>
 					</SwiperSlide>
@@ -64,25 +53,25 @@ const Oferta = () => {
 						<CardOffert
 							cardTitle={'Spedycja Międzynarodowa'}
 							cardText={
-								'Jako ekspert w dziedzinie spedycji, oferujemy kompleksowe rozwiązania logistyczne dla Twojej firmy. Niezależnie od skali działalności, nasze usługi spedycji obejmują solidne partnerstwa i globalne sieci, co zapewnia nie tylko bezpieczny, ale również punktualny transport Twoich towarów.'
+								'Działalność spedycyjna umożliwia załadunek z importu i exportu. Dzięki współpracy z przewoźnikami zapewnimy dowolność dostępności aut, także dla niestandardowych wymiarów czy tiefbett.'
 							}
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<CardOffert
 							cardTitle={'Transport'}
-							cardText='Nasza firma transportowa dostarcza nie tylko towary, ale także spokój umysłu. Dzięki nowoczesnej flocie pojazdów i profesjonalnej obsłudze, zapewniamy bezpieczne i terminowe dostawy. Nasze usługi transportowe obejmują zarówno krajowe, jak i międzynarodowe trasy, dostosowując się do indywidualnych potrzeb klientów.'
+							cardText='Realizujemy transporty krajowe i międzynarodowe 24/7, obsługując różne rodzaje przesyłek. Posiadamy niezbędne ADRy do przewozu towarów niebezpiecznych. Terminowość i bezpieczeństwo to nasze priorytety.'
 							cardLink={'oferta/transport'}
 						/>
 					</SwiperSlide>
 					<SwiperSlide>
 						<CardOffert
 							cardTitle={'Ubezpieczenia'}
-							cardText='Bezpieczeństwo to nasz priorytet. Oferujemy kompleksowe rozwiązania ubezpieczeniowe dla Twoich przesyłek. Nasze polisy transportowe chronią przed różnymi ryzykami, gwarantując, że Twoje towary są zabezpieczone na każdym etapie podróży, co pozwala Ci skupić się na rozwoju swojego biznesu.'
+							cardText=' Oferujemy ubezpieczenia cargo zapewniające bezpieczeństwo mienia w transporcie. Polisy są dostosowane do różnych ładunków, chroniąc towary przed ryzykiem utraty czy uszkodzenia.'
 						/>
 					</SwiperSlide>
 				</Swiper>
-			</div> */}
+			</div>
 		</div>
 	)
 }

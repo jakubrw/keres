@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { UsersIcon, TruckIcon, PhoneIcon, TagIcon , ExclamationTriangleIcon} from '@heroicons/react/24/outline'
+import { clamp, motion, MotionConfig } from 'framer-motion'
+import { UsersIcon, TruckIcon, PhoneIcon, TagIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -53,83 +54,100 @@ const Navbar = () => {
 				</div>
 			</div>
 			{isOpen && (
-				<div className='absolute z-3 bottom-0  bg-yellow-300  w-full'>
-					<div className='flex flex-row justify-between'></div>
-					<nav className='grid grid-rows-6 h-full justify-items-center m-0'>
-						<div className='row-span-1 row-end-1'>
-							<Link href='/'>
+				<MotionConfig transition={{ duration: 1 }}>
+					<motion.div
+						initial={{
+							opacity: 0.2,
+
+							clipPath: 'ellipse(25% 23% at 0% 100%)',
+						}}
+						animate={{
+							opacity: 1,
+
+							clipPath: 'ellipse(100% 55% at 50% 55%)',
+						}}
+						transition={{ duration: 0.8 }}
+						className='absolute z-3 bottom-0  bg-yellow-300  w-full'>
+						<motion.nav
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ duration: 0.2, delay: 1 }}
+							className='grid grid-rows-6 h-full justify-items-center m-0 '>
+							<div className='row-span-1 row-end-1'>
+								<Link href='/'>
+									<Image
+										className='relative  m-5'
+										src='/keresik.svg'
+										alt='keres logo'
+										width={80}
+										height={80}
+										priority
+										onClick={handleMenuClick}
+									/>
+								</Link>
+							</div>
+							<div className='my-1 px-10 py-1 row-span-4'>
+								<ul className='space-y-1 text-2xl font-bold text-center uppercase '>
+									<li className='w-60 h-16 py-4 '>
+										<Link
+											href={`/`}
+											onClick={handleMenuClick}
+											className='flex flex-row items-center justify-center'>
+											<UsersIcon className='h-5 font-bold' />
+											kariera
+										</Link>
+									</li>
+									<li className='w-60 h-16 py-4'>
+										<Link
+											href={`/oferta`}
+											onClick={handleMenuClick}
+											className='flex flex-row items-center justify-center'>
+											<TagIcon className='h-5' />
+											grafiki
+										</Link>
+									</li>
+
+									<li className='w-60 h-16 py-4'>
+										<Link
+											href={`/`}
+											onClick={handleMenuClick}
+											className='flex flex-row items-center justify-center'>
+											<TruckIcon className='h-5' />
+											flota
+										</Link>
+									</li>
+									{/* <li className='w-60 h-16 py-4'>
+								<Link
+									href={`/files`}
+									onClick={handleMenuClick}
+									className='flex flex-row items-center justify-items-center'>
+									<FolderArrowDownIcon className='h-5' /> pliki
+								</Link>
+							</li> */}
+									<li className='w-60 h-16 py-4'>
+										<Link
+											href={`/`}
+											onClick={handleMenuClick}
+											className='flex flex-row items-center justify-center'>
+											<PhoneIcon className='h-5'></PhoneIcon>Kontakt
+										</Link>
+									</li>
+								</ul>
+							</div>
+							<div className='row-span-1 row-start-6'>
 								<Image
-									className='relative  m-5'
-									src='/keresik.svg'
-									alt='keres logo'
-									width={80}
-									height={80}
+									className='relative m-2 '
+									src='/x.svg'
+									alt='exit image'
+									width={30}
+									height={30}
 									priority
 									onClick={handleMenuClick}
 								/>
-							</Link>
-						</div>
-						<div className='my-1 px-10 py-1 row-span-4'>
-							<ul className='space-y-1 text-2xl font-bold text-center uppercase '>
-								<li className='w-60 h-16 py-4 '>
-									<Link
-										href={`/`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-center'>
-										<UsersIcon className='h-5 font-bold' />
-										kariera
-									</Link>
-								</li>
-								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/oferta`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-center'>
-										<TagIcon className='h-5' />
-										grafiki
-									</Link>
-								</li>
-
-								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-center'>
-										<TruckIcon className='h-5' />
-										flota
-									</Link>
-								</li>
-								{/* <li className='w-60 h-16 py-4'>
-									<Link
-										href={`/files`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-items-center'>
-										<FolderArrowDownIcon className='h-5' /> pliki
-									</Link>
-								</li> */}
-								<li className='w-60 h-16 py-4'>
-									<Link
-										href={`/`}
-										onClick={handleMenuClick}
-										className='flex flex-row items-center justify-center'>
-										<PhoneIcon className='h-5'></PhoneIcon>Kontakt
-									</Link>
-								</li>
-							</ul>
-						</div>
-						<div className='row-span-1 row-start-6'>
-							<Image
-								className='relative m-2 '
-								src='/x.svg'
-								alt='exit image'
-								width={30}
-								height={30}
-								priority
-								onClick={handleMenuClick}
-							/>
-						</div>
-					</nav>
-				</div>
+							</div>
+						</motion.nav>
+					</motion.div>
+				</MotionConfig>
 			)}
 			{isOpenForm && (
 				<div className='fixed bottom-0 h-5/6 w-full z-3'>

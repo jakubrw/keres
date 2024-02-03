@@ -2,33 +2,36 @@
 import Image from 'next/image'
 
 import Counter from './Counters/Counter'
-import Counter2 from './Counters/Counter2'
-import Counter3 from './Counters/Counter3'
-import Counter4 from './Counters/Counter4'
 import Footer from './Footer'
 
 import Typewriter from 'typewriter-effect'
 import { motion, useInView } from 'framer-motion'
-import { PhotoIcon, ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
+import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect, useState } from 'react'
 
 const TitlePage = () => {
+	const container = useRef(null)
 	const ref = useRef(null)
+	const counter = useRef(null)
 	const isInView = useInView(ref, { once: true })
+	const counterInView = useInView(counter, { once: true })
 
+	useEffect(() => {
+		console.log('Element is in view: ', isInView)
+	}, [isInView])
 	return (
 		<div className='h-auto flex flex-col place-items-center'>
 			<motion.div
 				initial={{ height: '100vh' }}
-				animate={{ height: '12vh' }}
-				transition={{ type: 'circIn', delay: 1, duration: 3 }}
+				animate={{ height: '8vh' }}
+				transition={{ type: 'circIn', delay: 0.5, duration: 2 }}
 				className=' w-screen bg-r-700 relative mt-4 mb-[1vh]'>
-				<Image className='relative' src='/logo.svg' alt='keres logo' fill />
+				<Image src='/logo.svg' alt='keres logo' fill />
 			</motion.div>
-			<section className='h-[80vh] flex flex-col place-items-center justify-end '>
+			<section className='h-[92vh] flex flex-col place-items-center justify-end '>
 				<div className='h-3/4 w-full flex justify-center place-items-center relative bg-blend-hue'>
-					<div className='backdrop-opacity-0 z-10 absolute bottom-0  bg-gradient-to-b from-transparent from-0% to-zinc-200 to-20% pt-5'>
-						<h2 className='text-center text-xl font-medium'>
+					<div className='backdrop-opacity-0 z-10 absolute bottom-0  bg-gradient-to-b from-transparent from-0% to-[#D6DCDB] to-20% pt-5'>
+						<h2 className='text-center text-xl font-medium '>
 							Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo
 							obdarzają jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
 						</h2>
@@ -51,7 +54,7 @@ const TitlePage = () => {
 				</div>
 			</section>
 			<section
-				ref={ref}
+				ref={container}
 				className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px'>
 				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-10 px-5 pb-12'>
 					<div className=''>
@@ -62,16 +65,24 @@ const TitlePage = () => {
 							spedycyjno-logistyczne, stale powiększamy naszą flotę samochodową oraz zespół pracowników.
 						</div>
 
-						<div className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
-							<Counter valueCounter={1000} />
-							<p className='text-lg'>Przejechanych kilometrów </p>
-							<Counter2 valueCounter={3000} />
+						<div
+							ref={ref}
+							style={{
+								opacity: isInView ? 1 : 0,
+								transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
+							}}
+							className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
+							<Counter valueCounter={1000} state={isInView} delay={1} />
+							<p ref={counter} className='text-lg'>
+								Przejechanych kilometrów{' '}
+							</p>
+							<Counter valueCounter={3000} state={isInView} delay={100} />
 							<p className='text-lg'>Zleceń</p>
-							<Counter3 valueCounter={2190} />
+							<Counter valueCounter={2190} state={isInView} delay={200} />
 							<p className='text-lg font-bold uppercase'>Dni razem</p>
 						</div>
 
-						<div className='ring-1 ring-slate-900/5 h-48 bg-white bg-opacity-40 backdrop-blur-xl w-full overflow-hidden relative rounded-lg'>
+						<div className='ring-1 ring-slate-900/5 h-48 bg-white bg-opacity-40  w-full overflow-hidden relative rounded-lg'>
 							<Image
 								src='/svg/map.svg'
 								fill={true}
@@ -79,7 +90,7 @@ const TitlePage = () => {
 								alt='Map of countries visited by company'></Image>
 
 							<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl text-center'>
-								<Counter4 id={4} valueCounter={26} />
+								<Counter id={4} valueCounter={26} state={isInView} delay={300} />
 								<p className='text-lg pt-2'>Odzwiedzonych krajów</p>
 							</div>
 						</div>
