@@ -54,24 +54,22 @@ const Navbar = () => {
 				</div>
 			</div>
 			{isOpen && (
-				<MotionConfig transition={{ duration: 1 }}>
+				<MotionConfig transition={{ duration: 0.2 }}>
 					<motion.div
 						initial={{
 							opacity: 0.2,
-
 							clipPath: 'ellipse(25% 23% at 0% 100%)',
 						}}
 						animate={{
 							opacity: 1,
-
 							clipPath: 'ellipse(100% 55% at 50% 55%)',
 						}}
-						transition={{ duration: 0.8 }}
+						transition={{ duration: 0.1 }}
 						className='absolute z-3 bottom-0  bg-yellow-300  w-full'>
 						<motion.nav
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
-							transition={{ duration: 0.2, delay: 1 }}
+							transition={{ duration: 0.2, delay: 0.3 }}
 							className='grid grid-rows-6 h-full justify-items-center m-0 '>
 							<div className='row-span-1 row-end-1'>
 								<Link href='/'>

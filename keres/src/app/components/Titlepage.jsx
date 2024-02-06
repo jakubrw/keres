@@ -23,10 +23,23 @@ const TitlePage = () => {
 		<div className='h-auto flex flex-col place-items-center'>
 			<motion.div
 				initial={{ height: '100vh' }}
-				animate={{ height: '8vh' }}
-				transition={{ type: 'circIn', delay: 0.5, duration: 2 }}
-				className=' w-screen bg-r-700 relative mt-4 mb-[1vh]'>
-				<Image src='/logo.svg' alt='keres logo' fill />
+				animate={{ height: '10vh' }}
+				transition={{ type: 'circIn', delay: 1, duration: 4 }}
+				className='w-screen mt-3'>
+				<motion.div
+					initial={{ height: '20%' }}
+					animate={{ height: '3vh' }}
+					className='relative  w-full'
+					transition={{ type: 'circIn', delay: 0.1, duration: 4 }}>
+					<Image src='/keres name.svg' alt='comapny name in logo' fill />
+				</motion.div>
+				<motion.div
+					initial={{ height: '60%' }}
+					animate={{ height: '7vh' }}
+					className='relative  w-full'
+					transition={{ type: 'circIn', delay: 0.2, duration: 4 }}>
+					<Image src='/keres.svg' alt='company logo' fill />
+				</motion.div>
 			</motion.div>
 			<section className='h-[92vh] flex flex-col place-items-center justify-end '>
 				<div className='h-3/4 w-full flex justify-center place-items-center relative bg-blend-hue'>
