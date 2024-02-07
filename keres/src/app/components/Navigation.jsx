@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { clamp, motion, MotionConfig } from 'framer-motion'
+import { AnimatePresence, clamp, motion, MotionConfig } from 'framer-motion'
 import { UsersIcon, TruckIcon, PhoneIcon, TagIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 
 const Navbar = () => {
@@ -53,8 +53,8 @@ const Navbar = () => {
 					/>
 				</div>
 			</div>
-			{isOpen && (
-				<MotionConfig transition={{ duration: 0.2 }}>
+			<AnimatePresence>
+				{isOpen && (
 					<motion.div
 						initial={{
 							opacity: 0.2,
@@ -64,8 +64,12 @@ const Navbar = () => {
 							opacity: 1,
 							clipPath: 'ellipse(100% 55% at 50% 55%)',
 						}}
+						exit={{
+							opacity: 0.2,
+							clipPath: 'ellipse(25% 23% at 0% 100%)',
+						}}
 						transition={{ duration: 0.1 }}
-						className='absolute z-3 bottom-0  bg-yellow-300  w-full'>
+						className='absolute z-3 bottom-0 bg-yellow-300 w-full'>
 						<motion.nav
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
@@ -115,13 +119,13 @@ const Navbar = () => {
 										</Link>
 									</li>
 									{/* <li className='w-60 h-16 py-4'>
-								<Link
-									href={`/files`}
-									onClick={handleMenuClick}
-									className='flex flex-row items-center justify-items-center'>
-									<FolderArrowDownIcon className='h-5' /> pliki
-								</Link>
-							</li> */}
+							<Link
+								href={`/files`}
+								onClick={handleMenuClick}
+								className='flex flex-row items-center justify-items-center'>
+								<FolderArrowDownIcon className='h-5' /> pliki
+							</Link>
+						</li> */}
 									<li className='w-60 h-16 py-4'>
 										<Link
 											href={`/`}
@@ -145,8 +149,8 @@ const Navbar = () => {
 							</div>
 						</motion.nav>
 					</motion.div>
-				</MotionConfig>
-			)}
+				)}
+			</AnimatePresence>
 			{isOpenForm && (
 				<div className='fixed bottom-0 h-5/6 w-full z-3'>
 					<nav className='fixed pt-5 bottom-0 mt-[100px] ml-[-50%] w-[200%] rounded-t-[100%] bg-lime-400 h-5/6'>
