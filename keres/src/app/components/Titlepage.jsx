@@ -16,7 +16,6 @@ const TitlePage = () => {
 	const ref = useRef(null)
 	const counter = useRef(null)
 	const isInView = useInView(ref, { once: true })
-	const counterInView = useInView(counter, { once: true })
 
 	useEffect(() => {
 		console.log('Element is in view: ', isInView)
@@ -26,35 +25,35 @@ const TitlePage = () => {
 			<motion.div
 				initial={{ height: '100vh' }}
 				animate={{ height: '10vh' }}
-				transition={{ type: 'circIn', delay: 1, duration: 4 }}
+				transition={{ type: 'circIn', delay: 0.1, duration: 1.2 }}
 				className='w-screen mt-3 z-20'>
 				<motion.div
 					initial={{ height: '20%' }}
 					animate={{ height: '3vh' }}
 					className='relative  w-full'
-					transition={{ type: 'circIn', delay: 0.1, duration: 4 }}>
+					transition={{ type: 'circIn', delay: 0.1, duration: 1.2 }}>
 					<Image src='/keres name.svg' alt='comapny name in logo' fill />
 				</motion.div>
 				<motion.div
 					initial={{ height: '60%' }}
 					animate={{ height: '7vh' }}
 					className='relative  w-full'
-					transition={{ type: 'circIn', delay: 0.2, duration: 4 }}>
+					transition={{ type: 'circIn', delay: 0.2, duration: 1.2 }}>
 					<Image src='/keres.svg' alt='company logo' fill />
 				</motion.div>
 			</motion.div>
 			<motion.div
 				initial={{ display: 'none' }}
 				animate={{ display: 'block' }}
-				transition={{ delay: 3.2, duration: 2 }}>
+				transition={{ delay: 1.1, duration: 0.6 }}>
 				<section className='h-[92vh] flex flex-col place-items-center  '>
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ delay: 3.2, duration: 2 }}
-						className='h-2/5 w-full flex flex-col justify-end relative top-0'>
+						transition={{ delay: 1.1, duration: 1 }}
+						className='h-2/5 w-full flex flex-col justify-end relative items-center top-0'>
 						<Image alt='graphic image of company' src={entrySvg} fill className='-translate-y-20' />
-						<div className='z-10'>
+						<div className='z-10 bg-brown-light flex items-center justify-center mt-52 p-5 h-auto w-4/5 '>
 							<h2 className='text-center text-xl font-medium '>
 								Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo
 								obdarzają jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
