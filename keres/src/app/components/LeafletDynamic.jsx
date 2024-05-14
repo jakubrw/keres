@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 const DynamicLeaflet = dynamic(() => import('@/app/components/Leaflet'), {
 	ssr: false,
-	loading: () => <div className='h-full animate-pulse grid place-items-center'><PhotoIcon className='h-20 text-neutral-600' /></div>,
+	loading: () => <div className='h-full grid place-items-center'><PhotoIcon className='h-20 text-neutral-600' /></div>,
 })
 
 const LeafletDynamic = () => {

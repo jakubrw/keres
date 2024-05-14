@@ -114,7 +114,8 @@ const TitlePage = () => {
 						</div>
 					</motion.div>
 				</section>
-
+			</motion.div>
+			<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.6 }}>
 				<Footer />
 			</motion.div>
 		</div>

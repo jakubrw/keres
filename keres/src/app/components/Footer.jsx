@@ -28,7 +28,7 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className='h-4/5 w-[90vw] rounded-xl overflow-hidden m-2 border border-gray-500'>
-				<LeafletDynamic className=''/>
+				<LeafletDynamic />
 			</div>
 			<div className='pt-8'>
 				<p className='text-center text-xs text-gray-500 '>© KERES.PL 2023 X JRW</p>

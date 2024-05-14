@@ -26,9 +26,9 @@ function CardOffert({ cardTitle, cardText }) {
 				{cardText}
 			</p>
 			<Link href={`/oferta/${cardTitle}`} className='h-auto w-auto p-1 bg-black-100 pointer-events-auto'>
-				dowiedz się więcej
+				zapytaj o więcej
 			</Link>
-			<Image fill src={`/cards/${cardTitle}.jpg`} className='-z-10 blur-[2px]' alt='photo of cokolwiek' />
+			<Image fill src={`/cards/${cardTitle}.jpg`} className='-z-10 blur-[4px] brightness-75' alt='photo of cokolwiek' />
 		</>
 	)
 }

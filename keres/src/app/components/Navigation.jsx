@@ -79,7 +79,7 @@ const Navbar = () => {
 			{navOpen == 1 ? NavContainer : ''}
 			<div className='menu-icon flex justify-between h-[20px] '>
 				<div
-					className={`${NavButton + LeftNavButton} bg-yellow-light `}
+					className={`${NavButton + LeftNavButton} bg-yellow-light  `}
 					onClick={() => {
 						handleNavClick(1, 'menu')
 					}}>

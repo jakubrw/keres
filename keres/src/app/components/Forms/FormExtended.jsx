@@ -10,8 +10,8 @@ const FormExtended = () => {
 		setFormExtendedTransportFill(x)
 	}
 	return (
-		<div className=' h-screen self-start max-h-[60vh] w-full max-w-[500px] overflow-scroll'>
-			<div className='mt-2 overflow-scroll'>
+		<div className='overflow-y-auto h-screen self-start max-h-[60vh] w-full max-w-[500px] '>
+			<div className='mt-2 '>
 				<label htmlFor='name' className='block text-sm font-medium leading-6 text-gray-900'>
 					Imię
 				</label>
@@ -60,7 +60,7 @@ const FormExtended = () => {
 				</datalist>
 				<div className='block text-sm font-medium leading-6 text-gray-900'>
 					<p className='block text-sm font-medium leading-6 text-gray-900'>Transport</p>
-					<div className='overflow-hidden flex justify-between rounded-md border-0 mt-2 text-gray-900 shadow-inner shadow-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-dark sm:text-sm sm:leading-6'>
+					<div className='overflow-hidden flex justify-between rounded-md  mb-4 shadow-inner shadow-stone-500 ring-inset ring-stone-500 placeholder:text-stone-200 focus:ring-2 focus:ring-inset focus:ring-green-dark sm:text-sm sm:leading-6'>
 						<button
 							type='button'
 							onClick={() => {
@@ -107,7 +107,7 @@ const FormExtended = () => {
 					<p className='block text-sm font-medium leading-6 text-gray-900'>Załadunek</p>
 					<div
 						name='cargo'
-						className='overflow-hidden flex justify-between rounded-md border-0 mt-2 text-gray-900 shadow-inner shadow-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-dark sm:text-sm sm:leading-6'>
+						className='overflow-hidden flex justify-between rounded-md  mb-4 shadow-inner shadow-stone-500 ring-inset ring-stone-500 placeholder:text-stone-200 focus:ring-2 focus:ring-inset focus:ring-green-dark sm:text-sm sm:leading-6'>
 						<button
 							type='button'
 							onClick={() => {
@@ -160,6 +160,7 @@ const FormExtended = () => {
 					id='message'
 					className='block w-full rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-dark light 600 sm:text-sm sm:leading-6'
 					placeholder=''
+					style={{ maxHeight: '120px' }}
 				/>
 			</div>
 		</div>

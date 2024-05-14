@@ -19,7 +19,7 @@ const FormBasic = () => {
 				<label htmlFor='tel' className='block text-sm font-medium leading-6 text-gray-900'>
 					Telefon
 				</label>
-				<div className='flex overflow-hidden rounded-md  focus-within:ring-2 focus-within:ring-inset focus-within:ring-yellow-light sm:max-w-md'>
+				<div className='flex overflow-hidden rounded-md focus-within:ring-2 focus-within:ring-inset focus-within:ring-yellow-light sm:max-w-md'>
 					<span className='flex select-none items-center px-1 text-gray-500 bg-gray-200 sm:text-sm'>+48</span>
 					<input
 						maxLength={9}

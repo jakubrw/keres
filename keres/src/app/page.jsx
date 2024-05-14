@@ -4,6 +4,10 @@ import React, { useEffect, useState } from 'react'
 import TitlePage from './components/Titlepage'
 import Navbar from './components/Navigation'
 import { redirect } from 'next/navigation'
+import {Roboto, Montserrat} from 'next/font/google'
+
+const roboto = Roboto({ weight: '400', subsets: ['latin'] })
+
 
 const Home = () => {
 	const [windowWidth, setWindowWidth] = useState(0)
@@ -24,8 +28,10 @@ const Home = () => {
 		}
 	}, [])
 
+
+	
 	return (
-		<main className='min-h-screen'>
+		<main className={`min-h-screen ${roboto.className} `}>
 			{windowWidth > 700 ? (
 				redirect("/error")
 			) : (

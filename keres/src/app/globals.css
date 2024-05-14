@@ -13,4 +13,7 @@ body {
 	background: rgb(var(--background-start-rgb));
 }
 
+h2 {
+	font-family: var(--font-montserrat-mono);
+}
 @import url('swiper/css');
