@@ -10,6 +10,7 @@ import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect, useState } from 'react'
 
 import entrySvg from '../../../public/graphics/Company.svg'
+import backgroundSvg from '../../../public/svg/boxes/box-flat.svg'
 
 const TitlePage = () => {
 	const container = useRef(null)
@@ -53,21 +54,27 @@ const TitlePage = () => {
 						transition={{ delay: 1.1, duration: 1 }}
 						className='h-2/5 w-full flex flex-col justify-end relative items-center top-0'>
 						<Image alt='graphic image of company' src={entrySvg} fill className='-translate-y-20' />
-						<div className='z-10 bg-brown-light flex items-center justify-center mt-52 p-5 h-auto w-4/5 '>
-							<h2 className='text-center text-xl font-medium '>
-								Naszą misją jest Państwa zadowolenie ze współpracy z nami a zaufanie, którym nas Państwo
-								obdarzają jest dla nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
-							</h2>
+						<div className='z-10  flex items-center justify-center absolute top-[50%] p-5 h-auto w-4/5 aspect-square rounded-lg bg-brown-light'>
+							<Image alt='cokolwiek' src={backgroundSvg} fill className='z-[0] p-4 backdrop-blur'></Image>
+							<div className='z-20'>
+								<h2 className='text-center text-2xl font-medium text-black backdrop-blur-sm italic z-10'>
+									Naszą misją jest Wasze <span className='font-bold not-italic'>zadowolenie</span> ze
+									współpracy z nami, a <span className='font-bold not-italic'>zaufanie</span> jest dla
+									nas siłą napędzającą do jeszcze doskonalszego wykonywania zleceń
+								</h2>
+							</div>
 						</div>
 					</motion.div>
 					<div className='justify-self-center px-6 py-1 text-center text-xl'></div>
 
-					<div className='w-screen h-2/3 bg-[url(/waves.svg)]  bg-no-repeat bg-bottom flex flex-col place-items-center justify-center justify-self-end'>
+					<div className='w-screen h-2/3 bg-[url(/waves.svg)]  bg-no-repeat bg-bottom flex flex-col place-items-center justify-center justify-self-end text-xl'>
 						<Typewriter
 							options={{
 								strings: ['Dobry interes z firmą <strong>KERES!</strong>', 'Zobacz więcej!'],
 								autoStart: true,
 								loop: true,
+								delay: 20,
+								deleteSpeed: 35,
 							}}
 						/>
 						<ChevronDoubleDownIcon className='h-4 text-neutral-600 animate-bounce' />
@@ -75,10 +82,10 @@ const TitlePage = () => {
 				</section>
 				<section
 					ref={container}
-					className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px'>
+					className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px text-lg'>
 					<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-10 px-5 pb-12'>
 						<div className=''>
-							<div className='text-center mb-5 antialiased'>
+							<div className='text-center  mb-5 antialiased'>
 								Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą
 								są transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym
 								celem jest stały rozwój oferty i podnoszenie jakości usług oferowanych klientom.
@@ -106,7 +113,7 @@ const TitlePage = () => {
 									<p className='text-lg uppercase font-bold'>odwiedzonych krajów</p>
 								</div>
 							</div>
-							<div className='text-center mt-10 text-sm'>
+							<div className='text-center mt-10'>
 								Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
 								zaangażowaniem. W związku z tym jeśli są sytuacje niespodziewane działamy ekspresowo,
 								ponieważ wiemy o tym od razu!
@@ -115,7 +122,11 @@ const TitlePage = () => {
 					</motion.div>
 				</section>
 			</motion.div>
-			<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.6 }}>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 1.1, duration: 0.6 }}
+				className='w-full'>
 				<Footer />
 			</motion.div>
 		</div>

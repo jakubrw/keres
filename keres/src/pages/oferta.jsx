@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image'
 
+
 const Oferta = () => {
 	const offersArr = [
 		{
@@ -38,18 +39,25 @@ const Oferta = () => {
 		<div className='min-h-screen w-screen relative'>
 			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} />
 			<div className=' flex flex-col items-center mx-5 gap-3'>
-				<div className='bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-5 border border-gray-400 text-center px-10 py-4 '>
-					<h2 className='text-lg text-center'>
+				<div
+					>
+					<h2 className='text-2xl text-center font-bold'>
 						Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.{' '}
 					</h2>
 				</div>
-				<div className='w-full h-[30vh] text-center'>
-					<Swiper centeredSlides={true} loop={true} spaceBetween={50} modules={[Autoplay]} autoplay className='h-full'>
+				<div className='w-full aspect-square '>
+					<Swiper
+						centeredSlides={true}
+						loop={true}
+						spaceBetween={50}
+						modules={[Autoplay]}
+						autoplay={{ delay: 4000 }}
+						className='h-full'>
 						{offersArr.map(x => {
 							return (
 								<SwiperSlide
 									key={x.cardTitle}
-									className='text-white font-solid flex flex-col items-center justify-center overflow-hidden rounded-xl'>
+									className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl bg-gradient-to-r from-yellow-light to-green-light px-8'>
 									<CardOffert key={x.cardTitle} cardTitle={x.cardTitle} cardText={x.cardText} />
 								</SwiperSlide>
 							)
@@ -71,28 +79,29 @@ const Oferta = () => {
 					width={200}
 					height={200}
 					className='absolute z-[-5] top-0 right-[1/2]'></Image>
-				<div className='text-center rounded-xl shadow-lg p-8 bg-gradient-to-r from-yellow-light to-green-light'>
-					<p>
-						Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze
-						oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
-					</p>
+				<div className='text-left rounded-xl shadow-lg p-8 '>
+					<ul>
+						<li>
+							Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy
+							najlepsze oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
+						</li>
 
-					<p>
-						Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
-						korzystamy z różnych przewoźników znajdujących się możliwie najbliżej załadunku, by pominąć
-						koszty dojazdu i powrotu co daje nam zoptymalizować koszty samego transportu.
-					</p>
-				</div>
-				<div className='text-center rounded-xl shadow-lg p-8 bg-gradient-to-r from-yellow-light to-green-light'>
-					<p>Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy.</p>
-					<p>
-						Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych zleceń co
-						zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
-					</p>
-					<p>
-						Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy czym
-						nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
-					</p>
+						<li>
+							Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
+							korzystamy z różnych przewoźników znajdujących się możliwie najbliżej załadunku, by pominąć
+							koszty dojazdu i powrotu co daje nam zoptymalizować koszty samego transportu.
+						</li>
+
+						<li>Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy.</li>
+						<li>
+							Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych
+							zleceń co zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
+						</li>
+						<li>
+							Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy
+							czym nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

@@ -12,23 +12,12 @@ CardOffert.defaultProps = {
 function CardOffert({ cardTitle, cardText }) {
 	return (
 		<>
-			<h2
-				style={{
-					textShadow: `0px 0px 6px ${'black'}`,
-				}}
-				className='font-bold uppercase text-xl'>
-				{cardTitle}
-			</h2>
-			<p
-				style={{
-					textShadow: `0px 0px 6px ${'black'}`,
-				}}>
-				{cardText}
-			</p>
-			<Link href={`/oferta/${cardTitle}`} className='h-auto w-auto p-1 bg-black-100 pointer-events-auto'>
+			<h2 className='font-bold uppercase text-2xl'>{cardTitle}</h2>
+			<p className='self-stretch text-left text-lg'>{cardText}</p>
+			<Link href={`/oferta/${cardTitle}`} className='h-auto w-auto p-1 bg-black-100 pointer-events-auto text-right'>
 				zapytaj o więcej
 			</Link>
-			<Image fill src={`/cards/${cardTitle}.jpg`} className='-z-10 blur-[4px] brightness-75' alt='photo of cokolwiek' />
+			{/* <Image fill src={`/cards/${cardTitle}.jpg`} className='-z-10 blur-[4px] brightness-75' alt='photo of cokolwiek' /> */}
 		</>
 	)
 }
