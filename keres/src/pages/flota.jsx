@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Header from '@/app/components/Header'
 import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 
 const trucksTypes = [
 	{
@@ -95,103 +97,73 @@ const trucksTypes = [
 ]
 
 const Flota = () => {
-	const renderDimensions = dimensions => {
-		return dimensions.join(' x ')
-	}
-
-	const renderLoadType = loadType => {
-		if (Array.isArray(loadType)) {
-			return loadType.join(', ')
-		} else if (typeof loadType === 'object') {
-			return Object.entries(loadType)
-				.map(([key, value]) => {
-					if (Array.isArray(value)) {
-						return `${key}: ${value.join(' x ')}`
-					} else {
-						return `${key}: ${value}`
-					}
-				})
-				.join(', ')
-		}
-		return ''
-	}
-
-	const renderCarName = carName => {
-		if (typeof carName === 'object' && carName.hasOwnProperty('pl')) {
-			return carName.pl
-		}
-		return carName
-	}
-
-	const [expandedRows, setExpandedRows] = useState([])
-
-	const handleToggleRow = index => {
-		const newExpandedRows = [...expandedRows]
-		if (newExpandedRows.includes(index)) {
-			newExpandedRows.splice(newExpandedRows.indexOf(index), 1)
-		} else {
-			newExpandedRows.push(index)
-		}
-		setExpandedRows(newExpandedRows)
-	}
-
 	return (
-		<div>
+		<div className='min-h-screen w-screen relative'>
 			<Header titleName={'nasza flota'} />
-			<h2></h2>
-			<div>
-				<div>
-					{trucksTypes.map((truck, index) => (
-						<React.Fragment key={index}>
-							<div className=''>
-								<div>
-									<div className='flex justify-between' onClick={() => handleToggleRow(index)}>
-										<div className='text-lg capitalize shadow-inner	'>{truck.CarType}</div>
-										{expandedRows.includes(index) ? (
-											<ChevronUpIcon className='h-6 w-6 text-blue-500' />
-										) : (
-											<ChevronDownIcon className='h-6 w-6 text-blue-500' />
-										)}
+			<div className='flex flex-col items-center'>
+				<div className='relative w-4/5 '>
+					<Swiper
+						centeredSlides={true}
+						loop={true}
+						spaceBetween={50}
+						modules={[Autoplay]}
+						autoplay={{ delay: 4000 }}
+						className='h-[300px] flex flex-col justify-center items-center'>
+						{trucksTypes.map(x => {
+							return (
+								<SwiperSlide
+									key={x.CarType}
+									className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
+									<div className='relative h-24'>
+										<Image></Image>
+										<Image src={`./svg/trucks/${x.ImageAlias}.svg`} alt={x.CarType} fill={true} />
 									</div>
-									{expandedRows.includes(index) && (
-										<div className='flex flex-col items-center'>
-											<div className='h-40 w-full relative'>
-												<Image
-													src={`./svg/trucks/${truck.ImageAlias}.svg`}
-													alt={truck.CarType}
-													fill={true}
-												/>
-											</div>
-											<div className='flex my-2 mx-10 gap-2'>
-												<div className='flex flex-col w-1/2'>
-													<div>
-														<p>Ładowność</p>
-													</div>
-													<div>
-														<p>Ilość europalet</p>
-													</div>
-													<div>
-														<p>Wymiary ładowności</p>
-													</div>
-													<div>
-														<p>Sposob załadunku</p>
-													</div>
-													<div></div>
-												</div>
-												<div className='flex flex-col w-1/2'>
-													<div>{renderCarName(truck.CarName)}</div>
-													<div>{truck.Capacity}T</div>
-													<div>{truck.PalletsCapacity}</div>
-													<div>{truck.Dimensions.map(x => x + 'cm ')}</div>
-													<div>{renderLoadType(truck.LoadType)}</div>
-												</div>
-											</div>
+									<h2 className='text-2xl capitalize font-bold text-center'>{x.CarType}</h2>
+
+									<div className='flex flex-col items-center border-2 border-black'>
+										<p>{x.Capacity}</p>
+										<p>{x.PalletsCapacity}</p>
+										<p>{x.Dimensions}</p>
+										<p>
+											{x.LoadType[0]} {x.LoadType[1]} {x.LoadType[2]}
+										</p>
+										<p>{x.ConstructionType}</p>
+									</div>
+								</SwiperSlide>
+							)
+						})}
+					</Swiper>
+					{trucksTypes.map(x => {
+						return (
+							<>
+								<Swiper>
+									<SwiperSlide
+										key={x.CarType}
+										className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
+										<div className='relative h-24'>
+											<Image></Image>
+											<Image
+												src={`./svg/trucks/${x.ImageAlias}.svg`}
+												alt={x.CarType}
+												fill={true}
+											/>
 										</div>
-									)}
+										<h2 className='text-2xl capitalize font-bold text-center'>{x.CarType}</h2>
+									</SwiperSlide>
+								</Swiper>
+
+								<div className='flex flex-col items-center border border-black'>
+									<p>{x.Capacity}</p>
+									<p>{x.PalletsCapacity}</p>
+									<p>{x.Dimensions}</p>
+									<p>
+										{x.LoadType[0]} {x.LoadType[1]} {x.LoadType[2]}
+									</p>
+									<p>{x.ConstructionType}</p>
 								</div>
-							</div>
-						</React.Fragment>
-					))}
+							</>
+						)
+					})}
 				</div>
 			</div>
 		</div>
