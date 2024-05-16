@@ -4,6 +4,7 @@ import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
+import styles from '../app/globals.css'
 
 const trucksTypes = [
 	{
@@ -97,73 +98,62 @@ const trucksTypes = [
 ]
 
 const Flota = () => {
+	const [activeTruck, setActiveTruck] = useState(trucksTypes[0])
+
+	const handleSlideChange = swiper => {
+		const currentSlide = swiper.realIndex // Use realIndex instead of activeIndex
+		setActiveTruck(trucksTypes[currentSlide])
+	}
+
 	return (
 		<div className='min-h-screen w-screen relative'>
+			{/* Header component */}
 			<Header titleName={'nasza flota'} />
 			<div className='flex flex-col items-center'>
-				<div className='relative w-4/5 '>
+				<div className='relative w-4/5 overflow-hidden '>
+					<div className={'animation animation-layer1 '} />
+					<div className={'animation animation-back animation-layer2 '} />
+					<div className={'animation animation-back animation-layer3 '} />
+					<div className={'animation animation-face animation-layer4 '} />
+					<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)]'>
+						{activeTruck.CarType}
+					</h2>
+					<div className='flex flex-col items-center border-2 border-black mt-8'>
+						<p>Ładowność: {activeTruck.Capacity} T</p>
+						<p>Ładowność palet: {activeTruck.PalletsCapacity}</p>
+						<p>Wymiary: {activeTruck.Dimensions.join(' x ')} mm</p>
+						<p>
+							Sposób załadunku:{' '}
+							{Array.isArray(activeTruck.LoadType)
+								? activeTruck.LoadType.join(', ')
+								: Object.keys(activeTruck.LoadType).join(', ')}
+						</p>
+						<p>Typ zabudowy: {activeTruck.ConstructionType}</p>
+						<p>Dodatkowe informacje: {activeTruck.AdditionalInformations}</p>
+					</div>
 					<Swiper
 						centeredSlides={true}
 						loop={true}
 						spaceBetween={50}
 						modules={[Autoplay]}
 						autoplay={{ delay: 4000 }}
-						className='h-[300px] flex flex-col justify-center items-center'>
-						{trucksTypes.map(x => {
-							return (
-								<SwiperSlide
-									key={x.CarType}
-									className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
-									<div className='relative h-24'>
-										<Image></Image>
-										<Image src={`./svg/trucks/${x.ImageAlias}.svg`} alt={x.CarType} fill={true} />
-									</div>
-									<h2 className='text-2xl capitalize font-bold text-center'>{x.CarType}</h2>
-
-									<div className='flex flex-col items-center border-2 border-black'>
-										<p>{x.Capacity}</p>
-										<p>{x.PalletsCapacity}</p>
-										<p>{x.Dimensions}</p>
-										<p>
-											{x.LoadType[0]} {x.LoadType[1]} {x.LoadType[2]}
-										</p>
-										<p>{x.ConstructionType}</p>
-									</div>
-								</SwiperSlide>
-							)
-						})}
-					</Swiper>
-					{trucksTypes.map(x => {
-						return (
-							<>
-								<Swiper>
-									<SwiperSlide
-										key={x.CarType}
-										className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
-										<div className='relative h-24'>
-											<Image></Image>
-											<Image
-												src={`./svg/trucks/${x.ImageAlias}.svg`}
-												alt={x.CarType}
-												fill={true}
-											/>
-										</div>
-										<h2 className='text-2xl capitalize font-bold text-center'>{x.CarType}</h2>
-									</SwiperSlide>
-								</Swiper>
-
-								<div className='flex flex-col items-center border border-black'>
-									<p>{x.Capacity}</p>
-									<p>{x.PalletsCapacity}</p>
-									<p>{x.Dimensions}</p>
-									<p>
-										{x.LoadType[0]} {x.LoadType[1]} {x.LoadType[2]}
-									</p>
-									<p>{x.ConstructionType}</p>
+						className='h-[300px] flex flex-col justify-center items-center'
+						onSlideChange={swiper => handleSlideChange(swiper)}>
+						{trucksTypes.map((truck, index) => (
+							<SwiperSlide
+								key={index} // Use a unique key for each slide
+								className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
+								{/* Truck image */}
+								<div className='relative h-24'>
+									<Image
+										src={`/svg/trucks/${truck.ImageAlias}.svg`} // Provide correct src
+										alt={truck.CarType}
+										fill
+									/>
 								</div>
-							</>
-						)
-					})}
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</div>
 			</div>
 		</div>

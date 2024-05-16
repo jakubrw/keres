@@ -1,17 +1,19 @@
 import '@/app/globals.css'
 
 import Header from '../../app/components/Header'
+import Image from 'next/image'
+import styles from '../../app/globals.css'
 
 const Doradztwo = () => {
 	return (
 		<div className='min-h-screen'>
 			<Header logoWidth={30} logoHeight={30} titleName={'Doradztwo'} />
-			<div className='flex justify-center mx-8'>
-				<p className='text-ml'>
-					Nasza działalność w zakresie spedycji obejmuje kompleksową organizację transportu, zarządzanie
-					łańcuchem dostaw oraz monitorowanie przesyłek. Zaufaj nam, abyś mógł skoncentrować się na swoim
-					biznesie, a my zajmiemy się sprawnym i bezpiecznym przemieszczaniem Twoich towarów.
-				</p>
+			<div className={`${styles.animationContainer} relative h-[400px] w-[400px]`}>
+				{/* Apply animation to each image */}
+				<div className={'animation animation-layer1 '} />
+				<div className={'animation animation-back animation-layer2 '} />
+				<div className={'animation animation-back animation-layer3 '} />
+				<div className={'animation animation-face animation-layer4 '} />
 			</div>
 		</div>
 	)
