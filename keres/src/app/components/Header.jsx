@@ -6,9 +6,9 @@ import Image from 'next/image'
 const Header = ({ titleName, headerBgContent }) => {
 	return (
 		<>
-			<header className=''>
+			<header className='w-full'>
 				<Navigation />
-				<div className='flex flex-col items-center pt-2 relative'>
+				<div className='flex flex-col items-center pt-2 relative '>
 					<Link href='/'>
 						<Image
 							className='relative  z-0'

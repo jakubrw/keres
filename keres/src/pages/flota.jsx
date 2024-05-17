@@ -15,7 +15,17 @@ const FlotaBgContent = () => {
 				src='/graphics/flota-bg.svg'
 				width={300}
 				height={300}
-				className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[2px]'></Image>
+				className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[1px]'></Image>
+			<Image
+				src='/svg/car-left.svg'
+				width={100}
+				height={100}
+				className='absolute z-[-10] top-0 right-0  blur-[2px]'></Image>
+			<Image
+				src='/svg/car-right.svg'
+				width={100}
+				height={100}
+				className='absolute z-[-10] top-0 left-0  blur-[2px]'></Image>
 		</>
 	)
 }
