@@ -26,7 +26,7 @@ h2 {
 /* Define animation keyframes */
 @keyframes moveRight {
 	from {
-		background-position-x: 100%;
+		background-position-x: 1000%;
 	}
 	to {
 		background-position-x: 0%;
@@ -36,35 +36,11 @@ h2 {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	background-size: 200%;
+	background-size: cover;
 	background-repeat: repeat-x;
 	background-position-y: 70%;
-}
-.animation-back {
-	animation: moveRight 3s linear infinite;
-	
-}
-.animation-face {
-	animation: moveRight 3.5s linear infinite;
+	animation: moveRight 20s linear infinite;
+	background-image: url(../../public/svg/animation/animation2.jpg);
+	z-index: -30;
 }
 
-/* Define specific styles for each image */
-.animation-layer1 {
-	z-index: -80; /* Move background to the bottom */
-	background-image: url(../../public/svg/animation/animation-background.svg);
-}
-
-.animation-layer2 {
-	z-index: -79;
-	background-image: url(../../public/svg/animation/animation-trees.svg);
-}
-
-.animation-layer3 {
-	z-index: -78;
-	background-image: url(../../public/svg/animation/animation-grass.svg);
-}
-
-.animation-layer4 {
-	z-index: -77;
-	background-image: url(../../public/svg/animation/animation-face.svg);
-}

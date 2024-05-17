@@ -106,55 +106,87 @@ const Flota = () => {
 	}
 
 	return (
-		<div className='min-h-screen w-screen relative'>
+		<div className='min-h-screen w-screen relative flex flex-col items-center'>
 			{/* Header component */}
 			<Header titleName={'nasza flota'} />
-			<div className='flex flex-col items-center'>
-				<div className='relative w-4/5 overflow-hidden '>
-					<div className={'animation animation-layer1 '} />
-					<div className={'animation animation-back animation-layer2 '} />
-					<div className={'animation animation-back animation-layer3 '} />
-					<div className={'animation animation-face animation-layer4 '} />
-					<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)]'>
-						{activeTruck.CarType}
-					</h2>
-					<div className='flex flex-col items-center border-2 border-black mt-8'>
-						<p>Ładowność: {activeTruck.Capacity} T</p>
-						<p>Ładowność palet: {activeTruck.PalletsCapacity}</p>
-						<p>Wymiary: {activeTruck.Dimensions.join(' x ')} mm</p>
-						<p>
-							Sposób załadunku:{' '}
-							{Array.isArray(activeTruck.LoadType)
-								? activeTruck.LoadType.join(', ')
-								: Object.keys(activeTruck.LoadType).join(', ')}
-						</p>
-						<p>Typ zabudowy: {activeTruck.ConstructionType}</p>
-						<p>Dodatkowe informacje: {activeTruck.AdditionalInformations}</p>
+			<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)]'>
+				{activeTruck.CarType}
+			</h2>
+			<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg '>
+				<div className={'animation animation-face animation-layer4 '} />
+				<div className='relative'>
+					<div className='absolute flex flex-col items-center top w-full bg-brown-light [&>p>:nth-child(1)]:font-bold'>
+						{activeTruck.Capacity && (
+							<p>
+								<span>Ładowność:</span> <span>{activeTruck.Capacity} T</span>
+							</p>
+						)}
+						{activeTruck.PalletsCapacity && (
+							<p>
+								<span>Ładowność palet:</span> <span>{activeTruck.PalletsCapacity}</span>
+							</p>
+						)}
+						{activeTruck.Dimensions && activeTruck.Dimensions.length > 0 && (
+							<p>
+								<span>Wymiary:</span> <span>{activeTruck.Dimensions.join(' x ')} mm</span>
+							</p>
+						)}
+						{activeTruck.LoadType &&
+							(Array.isArray(activeTruck.LoadType)
+								? activeTruck.LoadType.length > 0 && (
+										<p>
+											<span>Sposób załadunku:</span>{' '}
+											<span>{activeTruck.LoadType.join(', ')}</span>
+										</p>
+								  )
+								: Object.keys(activeTruck.LoadType).length > 0 && (
+										<p>
+											<span>Sposób załadunku:</span>{' '}
+											<span>{Object.keys(activeTruck.LoadType).join(', ')}</span>
+										</p>
+								  ))}
+						{activeTruck.ConstructionType && (
+							<p>
+								<span>Typ zabudowy:</span> <span>{activeTruck.ConstructionType}</span>
+							</p>
+						)}
+						{activeTruck.AdditionalInformations && (
+							<>
+								<p>
+									<span>Dodatkowe informacje:</span>
+								</p>
+								<p>
+									{activeTruck.AdditionalInformations}
+								</p>
+							</>
+						)}
 					</div>
-					<Swiper
-						centeredSlides={true}
-						loop={true}
-						spaceBetween={50}
-						modules={[Autoplay]}
-						autoplay={{ delay: 4000 }}
-						className='h-[300px] flex flex-col justify-center items-center'
-						onSlideChange={swiper => handleSlideChange(swiper)}>
-						{trucksTypes.map((truck, index) => (
-							<SwiperSlide
-								key={index} // Use a unique key for each slide
-								className='text-black font-solid flex flex-col items-space justify-evenly justify-center overflow-hidden px-8'>
-								{/* Truck image */}
-								<div className='relative h-24'>
-									<Image
-										src={`/svg/trucks/${truck.ImageAlias}.svg`} // Provide correct src
-										alt={truck.CarType}
-										fill
-									/>
-								</div>
-							</SwiperSlide>
-						))}
-					</Swiper>
 				</div>
+				<Swiper
+					centeredSlides={true}
+					loop={true}
+					spaceBetween={50}
+					modules={[Autoplay]}
+					autoplay={{ delay: 4000 }}
+					className='h-full overflow-hidden bottom'
+					onSlideChange={swiper => handleSlideChange(swiper)}>
+					{trucksTypes.map((truck, index) => (
+						<SwiperSlide
+							key={index} // Use a unique key for each slide
+							className='text-black font-solid flex flex-col items-space justify-evenly justify-center'>
+							{/* Truck image */}
+							<div className='h-1/3 '>
+								<Image
+									src={`/svg/trucks/${truck.ImageAlias}.svg`} // Provide correct src
+									alt={truck.CarType}
+									height={200}
+									width={200}
+									className='absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
+								/>
+							</div>
+						</SwiperSlide>
+					))}
+				</Swiper>
 			</div>
 		</div>
 	)
