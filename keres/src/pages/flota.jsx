@@ -106,9 +106,10 @@ const Flota = () => {
 	}
 
 	return (
-		<div className='min-h-screen w-screen relative flex flex-col items-center'>
+		<div className='min-h-screen w-screen relative '>
 			{/* Header component */}
 			<Header titleName={'nasza flota'} />
+			<div className='flex flex-col items-center'>
 			<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)]'>
 				{activeTruck.CarType}
 			</h2>
@@ -187,6 +188,7 @@ const Flota = () => {
 						</SwiperSlide>
 					))}
 				</Swiper>
+			</div>
 			</div>
 		</div>
 	)
