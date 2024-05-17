@@ -6,6 +6,27 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image'
 
+const OfertaBgContent = () => {
+	return (
+		<>
+			<Image
+				src='/svg/boxes/boxes-open.svg'
+				width={200}
+				height={200}
+				className='absolute z-[-20] top-0 right-0 blur-sm'></Image>
+			<Image
+				src='/svg/boxes/box-open-flat.svg'
+				width={200}
+				height={200}
+				className='absolute z-[-10] top-0 left-0 blur-sm'></Image>
+			<Image
+				src='/svg/boxes/boxes-closed.svg'
+				width={200}
+				height={200}
+				className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[1px]'></Image>
+		</>
+	)
+}
 
 const Oferta = () => {
 	const offersArr = [
@@ -37,10 +58,9 @@ const Oferta = () => {
 	]
 	return (
 		<div className='min-h-screen w-screen relative'>
-			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} />
+			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} headerBgContent={<OfertaBgContent/>}/>
 			<div className=' flex flex-col items-center mx-5 gap-3'>
-				<div
-					>
+				<div>
 					<h2 className='text-2xl text-center font-bold'>
 						Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.{' '}
 					</h2>
@@ -64,21 +84,7 @@ const Oferta = () => {
 						})}
 					</Swiper>
 				</div>
-				<Image
-					src='/svg/boxes/boxes-open.svg'
-					width={200}
-					height={200}
-					className='absolute z-[-20] top-0 right-0'></Image>
-				<Image
-					src='/svg/boxes/box-open-flat.svg'
-					width={200}
-					height={200}
-					className='absolute z-[-10] top-0 left-0'></Image>
-				<Image
-					src='/svg/boxes/boxes-closed.svg'
-					width={200}
-					height={200}
-					className='absolute z-[-5] top-0 right-[1/2]'></Image>
+
 				<div className='text-left rounded-xl shadow-lg p-8 '>
 					<ul>
 						<li>

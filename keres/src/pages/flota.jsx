@@ -6,6 +6,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import styles from '../app/globals.css'
 
+const FlotaBgContent = () => {
+	return (
+		<>
+			<Image
+				src='/graphics/flota-bg.svg'
+				width={300}
+				height={300}
+				className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[2px]'></Image>
+		</>
+	)
+}
+
 const trucksTypes = [
 	{
 		CarName: '',
@@ -107,16 +119,14 @@ const Flota = () => {
 
 	return (
 		<div className='min-h-screen w-screen relative '>
-			{/* Header component */}
-			<Header titleName={'nasza flota'} />
+			<Header titleName={'nasza flota'} headerBgContent={<FlotaBgContent />} />
 			<div className='flex flex-col items-center'>
-			<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)]'>
-				{activeTruck.CarType}
-			</h2>
-			<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg '>
-				<div className={'animation animation-face animation-layer4 '} />
-				<div className='relative'>
-					<div className='absolute flex flex-col items-center top w-full bg-brown-light [&>p>:nth-child(1)]:font-bold'>
+				<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] mb-5'>
+					{activeTruck.CarType}
+				</h2>
+				<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg border border-black'>
+					<div className='animation animation-face animation-layer4 blur-[2px] ' />
+					<div className=' absolute flex flex-col items-center justify-evenly top w-full py-5 bg-gray-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40 border-b border-gray-300 [&>p>:nth-child(1)]:font-bold'>
 						{activeTruck.Capacity && (
 							<p>
 								<span>Ładowność:</span> <span>{activeTruck.Capacity} T</span>
@@ -156,39 +166,35 @@ const Flota = () => {
 								<p>
 									<span>Dodatkowe informacje:</span>
 								</p>
-								<p>
-									{activeTruck.AdditionalInformations}
-								</p>
+								<p>{activeTruck.AdditionalInformations}</p>
 							</>
 						)}
 					</div>
+					<Swiper
+						centeredSlides={true}
+						loop={true}
+						spaceBetween={50}
+						modules={[Autoplay]}
+						autoplay={{ delay: 4000 }}
+						className='h-full overflow-hidden bottom'
+						onSlideChange={swiper => handleSlideChange(swiper)}>
+						{trucksTypes.map((truck, index) => (
+							<SwiperSlide
+								key={index}
+								className='text-black font-solid flex flex-col items-space justify-evenly justify-center'>
+								<div className='h-1/3 '>
+									<Image
+										src={`/svg/trucks/${truck.ImageAlias}.svg`}
+										alt={truck.CarType}
+										height={200}
+										width={200}
+										className='absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 '
+									/>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</div>
-				<Swiper
-					centeredSlides={true}
-					loop={true}
-					spaceBetween={50}
-					modules={[Autoplay]}
-					autoplay={{ delay: 4000 }}
-					className='h-full overflow-hidden bottom'
-					onSlideChange={swiper => handleSlideChange(swiper)}>
-					{trucksTypes.map((truck, index) => (
-						<SwiperSlide
-							key={index} // Use a unique key for each slide
-							className='text-black font-solid flex flex-col items-space justify-evenly justify-center'>
-							{/* Truck image */}
-							<div className='h-1/3 '>
-								<Image
-									src={`/svg/trucks/${truck.ImageAlias}.svg`} // Provide correct src
-									alt={truck.CarType}
-									height={200}
-									width={200}
-									className='absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
-								/>
-							</div>
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</div>
 			</div>
 		</div>
 	)
