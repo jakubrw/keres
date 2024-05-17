@@ -58,7 +58,7 @@ const Oferta = () => {
 	]
 	return (
 		<div className='min-h-screen w-screen relative'>
-			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} headerBgContent={<OfertaBgContent/>}/>
+			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} headerBgContent={<OfertaBgContent />} />
 			<div className=' flex flex-col items-center mx-5 gap-3'>
 				<div>
 					<h2 className='text-2xl text-center font-bold'>
@@ -84,31 +84,35 @@ const Oferta = () => {
 						})}
 					</Swiper>
 				</div>
+				<Swiper
+					centeredSlides={true}
+					loop={true}
+					spaceBetween={50}
+					modules={[Autoplay]}
+					autoplay={{ delay: 10000 }}
+					className='w-full mx-8 aspect-[3/2] text-center font-italic'>
+					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 ratio-square'>
+						Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze
+						oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
+					</SwiperSlide>
+					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
+						Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
+						korzystamy z różnych przewoźników znajdujących się możliwie najbliżej załadunku, by pominąć
+						koszty dojazdu i powrotu co daje nam zoptymalizować koszty samego transportu.
+					</SwiperSlide>
 
-				<div className='text-left rounded-xl shadow-lg p-8 '>
-					<ul>
-						<li>
-							Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy
-							najlepsze oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
-						</li>
-
-						<li>
-							Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
-							korzystamy z różnych przewoźników znajdujących się możliwie najbliżej załadunku, by pominąć
-							koszty dojazdu i powrotu co daje nam zoptymalizować koszty samego transportu.
-						</li>
-
-						<li>Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy.</li>
-						<li>
-							Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych
-							zleceń co zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
-						</li>
-						<li>
-							Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy
-							czym nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
-						</li>
-					</ul>
-				</div>
+					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
+						Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy.
+					</SwiperSlide>
+					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
+						Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych zleceń co
+						zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
+					</SwiperSlide>
+					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
+						Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy czym
+						nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
+					</SwiperSlide>
+				</Swiper>
 			</div>
 		</div>
 	)

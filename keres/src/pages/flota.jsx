@@ -4,7 +4,9 @@ import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-import styles from '../app/globals.css'
+import { Pacifico } from 'next/font/google'
+
+const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
 
 const FlotaBgContent = () => {
 	return (
@@ -121,7 +123,8 @@ const Flota = () => {
 		<div className='min-h-screen w-screen relative '>
 			<Header titleName={'nasza flota'} headerBgContent={<FlotaBgContent />} />
 			<div className='flex flex-col items-center'>
-				<h2 className='text-center text-2xl capitalize font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] mb-5'>
+				<h2
+					className={` ${pacifico.className} text-center text-3xl capitalize font-black uppercase tracking-tighter text-green-light drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] mb-5`}>
 					{activeTruck.CarType}
 				</h2>
 				<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg border border-black'>
@@ -188,7 +191,7 @@ const Flota = () => {
 										alt={truck.CarType}
 										height={200}
 										width={200}
-										className='absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 '
+										className='absolute bottom-[40px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 '
 									/>
 								</div>
 							</SwiperSlide>

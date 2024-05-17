@@ -40,6 +40,6 @@ h2 {
 	background-repeat: repeat-x;
 	background-position-y: 70%;
 	animation: moveRight 120s linear infinite;
-	background-image: url(../../public/svg/animation/animation2.jpg);
+	background-image: url(../../public/svg/animation/animation.jpg);
 	z-index: -30;
 }
