@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 const FormExtended = () => {
 	const [formExtendedTransportType, setFormExtendedTransportType] = useState('local')
@@ -162,6 +163,8 @@ const FormExtended = () => {
 					placeholder=''
 					style={{ maxHeight: '120px' }}
 				/>
+				<div className='flex gap-2 mx-2 text-pretty'><input type='checkbox' name='agreement' id='agreement'/>
+				<label className='block text-sm font-medium leading-6 text-gray-900' htmlFor='agreement' >Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <Link href='/policy' className="font-bold underline" >polityką prywatności</Link>.</label></div>
 			</div>
 		</div>
 	)
