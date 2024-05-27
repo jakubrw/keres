@@ -71,7 +71,7 @@ const Oferta = () => {
 						loop={true}
 						spaceBetween={50}
 						modules={[Autoplay]}
-						autoplay={{ delay: 4000 }}
+						autoplay={{ delay: 6000 }}
 						className='h-full'>
 						{offersArr.map(x => {
 							return (

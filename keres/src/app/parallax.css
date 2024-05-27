@@ -1,0 +1,39 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.parallax {
+	object-fit: cover;
+}
+.parallax-5 {
+	transform: translateY(5%);
+}
+.parallax-4 {
+	transform: translateY(-10%);
+}
+.parallax-3 {
+	transform: translateY(-20%);
+}
+.parallax-2 {
+	transform: translateY(-20%);
+}
+.parallax-1 {
+	transform: translateY(-20%);
+	height: 400vh;
+	width: 300vh;
+}
+
+.parallax-logo-container {
+	transform: translateY(-600%);
+	height: 30vw;
+	width: auto;
+}
+
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

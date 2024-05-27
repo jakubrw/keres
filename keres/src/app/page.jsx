@@ -31,7 +31,7 @@ const Home = () => {
 
 	
 	return (
-		<main className={`min-h-screen ${roboto.className} `}>
+		<main className={`min-h-screen ${roboto.className} w-screen`}>
 			{windowWidth > 700 ? (
 				redirect("/error")
 			) : (
