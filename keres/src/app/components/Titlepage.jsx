@@ -28,10 +28,10 @@ const TitlePage = () => {
 					<div className='h-screen w-screen  relative '>
 						<div className='h-[60vh] w-auto aspect-[3/4] absolute-center z-[100]'>
 							<div className='w-[50vw] h-[30vh] relative m-auto'>
-								<Image fill absolute src={'/keres.svg'} className='z-20 parallax-logo'></Image>
+								<Image fill absolute src={'/keres.svg'} className='z-0 parallax-logo'></Image>
 							</div>
-							<div className='bottom-[0] absolute w-full'>
-								<div className='flex flex-col items-center'>
+							<div className='bottom-[0] absolute w-full z-0'>
+								<div className='flex flex-col items-center '>
 									<Typewriter
 										options={{
 											strings: [

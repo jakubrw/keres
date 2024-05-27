@@ -26,7 +26,7 @@ const Navbar = () => {
 	}
 
 	const NavContainer = (
-		<div className='max-h-screen w-screen  p-5 bg-yellow-light absolute z-[50] bottom-0 '>
+		<div className='max-h-screen w-screen p-5 bg-yellow-light absolute z-[200] bottom-0 '>
 			{navStatus == 'menu' ? (
 				<div className=''>
 					<div
@@ -75,7 +75,7 @@ const Navbar = () => {
 	)
 
 	return (
-		<nav id='nav' className='navbar fixed bottom-0 w-full z-50 '>
+		<nav id='nav' className='navbar fixed bottom-0 w-full z-[150] '>
 			{navOpen == 1 ? NavContainer : ''}
 			<div className='menu-icon flex justify-between h-[20px] '>
 				<div

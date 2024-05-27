@@ -4,17 +4,16 @@ import React, { useEffect, useState } from 'react'
 import TitlePage from './components/Titlepage'
 import Navbar from './components/Navigation'
 import { redirect } from 'next/navigation'
-import {Roboto, Montserrat} from 'next/font/google'
+import { Roboto, Montserrat } from 'next/font/google'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
-
 const Home = () => {
 	const [windowWidth, setWindowWidth] = useState(0)
-	
+
 	useEffect(() => {
 		const setupBeforeRender = () => {}
-		
+
 		setupBeforeRender()
 		const handleResize = () => {
 			setWindowWidth(window.innerWidth)
@@ -28,15 +27,13 @@ const Home = () => {
 		}
 	}, [])
 
-
-	
 	return (
 		<main className={`min-h-screen ${roboto.className} w-screen`}>
 			{windowWidth > 700 ? (
-				redirect("/error")
+				redirect('/error')
 			) : (
 				<>
-					<Navbar />
+					<Navbar className='z-[150]' />
 					<TitlePage />
 				</>
 			)}
