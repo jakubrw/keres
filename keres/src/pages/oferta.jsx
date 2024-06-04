@@ -57,13 +57,17 @@ const Oferta = () => {
 		},
 	]
 	return (
-		<div className='min-h-screen w-screen relative'>
-			<Header logoWidth={30} logoHeight={30} titleName={'Oferta'} headerBgContent={<OfertaBgContent />} />
-			<div className=' flex flex-col items-center mx-5 gap-3'>
+		<div className='min-h-screen w-screen relative '>
+			<Header
+				logoWidth={30}
+				logoHeight={30}
+				titleName={'Oferta'}
+				subtitleName={'Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.'}
+				headerBgContent={<OfertaBgContent />}
+			/>
+			<div className=' flex flex-col items-center  gap-3'>
 				<div>
-					<h2 className='text-2xl text-center font-bold'>
-						Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.{' '}
-					</h2>
+					<h2 className='text-2xl text-center font-bold'></h2>
 				</div>
 				<div className='w-full aspect-square '>
 					<Swiper
@@ -72,7 +76,7 @@ const Oferta = () => {
 						spaceBetween={50}
 						modules={[Autoplay]}
 						autoplay={{ delay: 6000 }}
-						className='h-full'>
+						className='h-full px-4'>
 						{offersArr.map(x => {
 							return (
 								<SwiperSlide
@@ -90,15 +94,14 @@ const Oferta = () => {
 					spaceBetween={50}
 					modules={[Autoplay]}
 					autoplay={{ delay: 10000 }}
-					className='w-full mx-8 aspect-[3/2] text-center font-italic'>
+					className='w-full mx-8 px-4 aspect-[3/2] text-center font-italic'>
 					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 ratio-square'>
 						Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze
 						oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
 					</SwiperSlide>
 					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
 						Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
-						korzystamy z różnych przewoźników znajdujących się możliwie najbliżej załadunku, by pominąć
-						koszty dojazdu i powrotu co daje nam zoptymalizować koszty samego transportu.
+						korzystamy z różnych przewoźników, aby zoptymalizować koszty transportu.
 					</SwiperSlide>
 
 					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
