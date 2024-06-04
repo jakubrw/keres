@@ -9,11 +9,7 @@ import { useInView } from 'framer-motion'
 import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
 import { useRef, useEffect, useState } from 'react'
 import { useViewportScroll, motion, useTransform, useMotionValue } from 'framer-motion'
-import { useParallax } from 'react-scroll-parallax'
 import Parallax from '@/pages/Parallax'
-
-import entrySvg from '../../../public/graphics/Company.svg'
-import backgroundSvg from '../../../public/svg/boxes/box-flat.svg'
 
 const TitlePage = () => {
 	const container = useRef(null)
@@ -30,8 +26,10 @@ const TitlePage = () => {
 							<div className='w-[50vw] h-[30vh] relative m-auto'>
 								<Image fill absolute src={'/keres.svg'} className='z-0 parallax-logo'></Image>
 							</div>
-							<div className='bottom-[0] absolute w-full z-0'>
-								<div className='flex flex-col items-center '>
+							<div className='top-[50] absolute w-full z-0'>
+								<div className='flex flex-col items-center text-blue-dark'>
+									<h1 className='text-8xl uppercase font-black'>keres</h1>
+
 									<Typewriter
 										options={{
 											strings: [

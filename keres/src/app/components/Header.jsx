@@ -2,8 +2,11 @@ import '../../app/globals.css'
 import Navigation from './Navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Pacifico } from 'next/font/google'
 
-const Header = ({ titleName, headerBgContent }) => {
+const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
+
+const Header = ({ titleName, subtitleName }) => {
 	return (
 		<>
 			<header className='w-full'>
@@ -19,10 +22,10 @@ const Header = ({ titleName, headerBgContent }) => {
 							priority
 						/>
 					</Link>
-					<h2 className='m-2 text-5xl font-black uppercase tracking-tighter text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] '>
+					<h2 className='m-2 text-5xl font-black uppercase tracking-tighter text-center text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] '>
 						{titleName}
 					</h2>
-					{headerBgContent}
+					<h3 className={`${pacifico.className} text-center text-xl text-blue-dark` }>{subtitleName}</h3>
 				</div>
 			</header>
 		</>

@@ -17,12 +17,7 @@ const Footer = () => {
 				<div className='h-10 w-10 flex-none rounded-full fill-gray-600 focus:outline-none !ring-transparent text-gray-800 border border-gray-500 border-b-gray-400 border-b-4 hover:border active:border  hover:text-gray-900  0 focus-visible:outline-gray-600 focus-visible:ring-gray-700  relative duration-200'>
 					<Image src='/icons/ico/google-maps.svg' fill alt='contact icon' className='p-1 contrast-[0.2]' />
 				</div>
-				<div className='h-10 w-10 flex-none rounded-full fill-gray-600 focus:outline-none !ring-transparent text-gray-800 border border-gray-500 border-b-gray-400 border-b-4 hover:border active:border  hover:text-gray-900  0 focus-visible:outline-gray-600 focus-visible:ring-gray-700  relative duration-200'>
-					<Image src='/icons/ico/instagram.svg' fill alt='contact icon' className='p-1 contrast-[0.2]' />
-				</div>
-				<div className='h-10 w-10 flex-none rounded-full fill-gray-600 focus:outline-none !ring-transparent text-gray-800 border border-gray-500 border-b-gray-400 border-b-4 hover:border active:border  hover:text-gray-900  0 focus-visible:outline-gray-600 focus-visible:ring-gray-700  relative duration-200'>
-					<Image src='/icons/ico/linkedin.svg' fill alt='contact icon' className='p-1 contrast-[0.2]' />
-				</div>
+
 				<div className='h-10 w-10 flex-none rounded-full fill-gray-600 focus:outline-none !ring-transparent text-gray-800 border border-gray-500 border-b-gray-400 border-b-4 hover:border active:border  hover:text-gray-900  0 focus-visible:outline-gray-600 focus-visible:ring-gray-700  relative duration-200'>
 					<Image src='/icons/ico/skype.svg' fill alt='contact icon' className='p-1 contrast-[0.2]' />
 				</div>
