@@ -15,7 +15,7 @@ const Leaflet = () => {
 	return (
 		<MapContainer
 			center={position}
-			zoom={16}
+			zoom={10}
 			scrollWheelZoom={false}
 			className='z-0'
 			style={{ height: '100%', minHeight: '50px' }}>

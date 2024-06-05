@@ -50,18 +50,28 @@ const TitlePage = () => {
 					</div>
 				</div>
 			</div>
-			<section
-				ref={container}
-				className='min-h-screen bg-gradient-to-r from-yellow-light to-green-light -translate-y-px text-lg'>
-				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-10 px-5 pb-12'>
+			<section>
+				<div className='m-2 p-6 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg'>
+					<p>
+						Naszą misją jest Państwa zadowolenie z wykonywanych przez nas usług i utrzymywanie stałych
+						współprac. Zaufanie którym nas obdarzacie jest siłą napędową do stałego doskonalenia i
+						podnoszenia kwalifikacji.
+					</p>
+				</div>
+			</section>
+			<section ref={container} className='min-h-screen  -translate-y-px text-lg'>
+				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-8 px-5 pb-12 '>
 					<div className=''>
-						<div className='text-center  mb-5 antialiased'>
-							Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą są
-							transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym celem jest
-							stały rozwój oferty i podnoszenie jakości usług oferowanych klientom. Rozwijamy zaplecze
-							spedycyjno-logistyczne, stale powiększamy naszą flotę samochodową oraz zespół pracowników.
+						<div className='  mb-5 antialiased'>
+							<p>
+								Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą
+								są transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym
+								celem jest stały rozwój oferty i podnoszenie jakości usług oferowanych klientom.
+								Rozwijamy zaplecze spedycyjno-logistyczne, stale powiększamy naszą flotę samochodową
+								oraz zespół pracowników.
+							</p>
 						</div>
-						<div className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40  w-full overflow-hidden  rounded-lg'>
+						<div className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40  w-full overflow-hidden  rounded-lg bg-gradient-to-r from-yellow-light to-green-light'>
 							<div
 								ref={ref}
 								style={{
@@ -71,7 +81,7 @@ const TitlePage = () => {
 								className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
 								<Counter valueCounter={12000} state={isInView} delay={1} />
 								<p ref={counter} className='text-lg uppercase font-bold'>
-									przejechanych kilometrów{' '}
+									tyś. przejechanych kilometrów{' '}
 								</p>
 								<Counter valueCounter={7200} state={isInView} delay={100} />
 								<p className='text-lg uppercase font-bold'>wykonanych zleceń</p>
@@ -82,7 +92,7 @@ const TitlePage = () => {
 								<p className='text-lg uppercase font-bold'>odwiedzonych krajów</p>
 							</div>
 						</div>
-						<div className='text-center mt-10'>
+						<div className=' mt-10'>
 							Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
 							zaangażowaniem. W związku z tym jeśli są sytuacje niespodziewane działamy ekspresowo,
 							ponieważ wiemy o tym od razu!

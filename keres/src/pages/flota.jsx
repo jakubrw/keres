@@ -32,92 +32,148 @@ const FlotaBgContent = () => {
 
 const trucksTypes = [
 	{
-		CarName: '',
-		CarType: 'samochód ciężarowy',
+		CarName: 'Maja',
 		Capacity: 14.2,
 		PalletsCapacity: 18,
 		Dimensions: [730, 248, 295],
 		LoadType: ['bok', 'tył', 'góra'],
 		ConstructionType: '',
 		AdditionalInformations: '',
-		ImageAlias: 'tir',
+		ImageAlias: 'maja',
 	},
 	{
-		CarName: '',
-		CarType: 'bus firanka',
+		CarName: 'zestaw Maja',
 		Capacity: 1.5,
 		PalletsCapacity: 12,
 		Dimensions: [490, 245, 285],
 		LoadType: ['bok', 'tył', 'góra'],
 		ConstructionType: 'firanka',
 		AdditionalInformations: '',
-		ImageAlias: 'firanka',
+		ImageAlias: 'zestaw-maja',
 	},
 	{
-		CarName: '',
-		CarType: 'bus firanka + winda',
+		CarName: 'Gośka',
 		Capacity: 1.2,
 		PalletsCapacity: 10,
 		Dimensions: [420, 245, 250],
 		LoadType: ['bok', 'tył'],
 		ConstructionType: 'firanka',
 		AdditionalInformations: 'Winda - udźwig 750kg',
-		ImageAlias: 'firanka',
+		ImageAlias: 'goska',
 	},
 	{
-		CarName: '',
-		CarType: 'blaszak',
+		CarName: 'Iwonka',
 		Capacity: 1.2,
 		PalletsCapacity: 8,
 		Dimensions: [460, 170, 210],
 		LoadType: { 'drzwi bok': [120, 179], 'drzwi tył': [151, 195] },
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
-		ImageAlias: 'blaszak',
+		ImageAlias: 'iwonka',
 	},
 	{
-		CarName: '',
-		CarType: 'blaszak',
+		CarName: 'Szaraczek',
 		Capacity: 1,
 		PalletsCapacity: 6,
 		Dimensions: [437, 170, 190],
 		LoadType: { 'drzwi bok': [120, 178], 'drzwi tył': [143, 177] },
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
-		ImageAlias: 'blaszak',
+		ImageAlias: 'szarak',
 	},
 	{
-		CarName: '',
-		CarType: 'furgon',
+		CarName: 'Szprota',
 		Capacity: 0.5,
 		PalletsCapacity: '',
 		Dimensions: [140, 90, 130],
 		LoadType: { 'drzwi tył': '' },
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
-		ImageAlias: 'furgon',
+		ImageAlias: 'szprota',
 	},
 	{
-		CarName: '',
-		CarType: 'blaszak',
+		CarName: 'Caddy',
 		Capacity: 0.5,
 		PalletsCapacity: 2,
 		Dimensions: [300, 120, 128],
 		LoadType: { 'drzwi tył': '' },
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
-		ImageAlias: 'blaszak',
+		ImageAlias: 'caddy',
 	},
 	{
-		CarName: '',
-		CarType: 'TIR',
+		CarName: 'Zośka',
 		Capacity: 13.6,
 		PalletsCapacity: 33,
 		Dimensions: [1360, 245, 300],
 		LoadType: ['bok', 'tył', 'góra'],
 		ConstructionType: 'plandeka',
 		AdditionalInformations: '',
-		ImageAlias: 'tir',
+		ImageAlias: 'zoska',
+	},
+	{
+		CarName: 'Gośka + Lora',
+		Capacity: 0.5,
+		PalletsCapacity: '',
+		Dimensions: [140, 90, 130],
+		LoadType: ['drzwi tył'],
+		TrailerCapacity: 2.4,
+		TrailerDimensions: [800, 225, 60],
+		ConstructionType: 'blaszak',
+		AdditionalInformations: '',
+		ImageAlias: 'lora-goska',
+	},
+	{
+		CarName: 'Szarak + Lora',
+		Capacity: 1,
+		PalletsCapacity: 12,
+		Dimensions: [460, 170, 210],
+		ConstructionType: 'blaszak',
+		LoadType: ['drzwi tył'],
+		TrailerCapacity: 2.4,
+		TrailerDimensions: [800, 225, 60],
+		AdditionalInformations: '',
+		ImageAlias: 'lora-szarak',
+	},
+	{
+		CarName: 'Gośka + Plandeka',
+		Capacity: 1,
+		PalletsCapacity: 12,
+		Dimensions: [490, 245, 265],
+		ConstructionType: 'blaszak',
+		LoadType: ['drzwi tył'],
+		TrailerCapacity: 2.4,
+		TrailerPalletsCapacity: 10,
+		TrailerDimensions: [520, 220, 250],
+		TrailerLoadType: ['drzwi tył'],
+		TrailerConstructionType: 'plandeka',
+		AdditionalInformations: '',
+		ImageAlias: 'lora-goska',
+	},
+	{
+		CarName: 'Szarak + Plandeka',
+		Capacity: 1,
+		PalletsCapacity: 8,
+		Dimensions: [460, 270, 210],
+		ConstructionType: 'blaszak',
+		LoadType: ['drzwi tył'],
+		TrailerCapacity: 2.4,
+		TrailerPalletsCapacity: 10,
+		TrailerDimensions: [520, 220, 250],
+		TrailerLoadType: ['drzwi tył'],
+		TrailerConstructionType: 'plandeka',
+		AdditionalInformations: '',
+		ImageAlias: 'zestaw-szarak',
+	},
+	{
+		CarName: 'Bogusia',
+		Capacity: 24,
+		PalletsCapacity: 33,
+		Dimensions: [1360, 245, 300],
+		LoadType: ['bok', 'tył', 'góra'],
+		ConstructionType: 'blaszak',
+		AdditionalInformations: '',
+		ImageAlias: 'bogusia',
 	},
 ]
 
@@ -130,12 +186,12 @@ const Flota = () => {
 	}
 
 	return (
-		<div className='min-h-screen w-screen relative '>
+		<div className='h-screen w-screen relative '>
 			<Header titleName={'nasza flota'} headerBgContent={<FlotaBgContent />} />
-			<div className='flex flex-col items-center'>
+			<div className='flex flex-col items-center backdrop-filter backdrop-blur-xs mt-8'>
 				<h2
-					className={` ${pacifico.className} text-center text-3xl capitalize font-black uppercase tracking-tighter text-green-light drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] mb-5`}>
-					{activeTruck.CarType}
+					className={` ${pacifico.className} text-center text-3xl capitalize font-bolder uppercase tracking-tighter text-blue-light  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] my-5`}>
+					{activeTruck.CarName}
 				</h2>
 				<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg border border-black'>
 					<div className='animation animation-face animation-layer4 blur-[2px] ' />
@@ -152,7 +208,7 @@ const Flota = () => {
 						)}
 						{activeTruck.Dimensions && activeTruck.Dimensions.length > 0 && (
 							<p>
-								<span>Wymiary:</span> <span>{activeTruck.Dimensions.join(' x ')} mm</span>
+								<span>Wymiary:</span> <span>{activeTruck.Dimensions.join(' x ')} cm</span>
 							</p>
 						)}
 						{activeTruck.LoadType &&
@@ -182,6 +238,22 @@ const Flota = () => {
 								<p>{activeTruck.AdditionalInformations}</p>
 							</>
 						)}
+						{activeTruck.TrailerCapacity && (
+							<>
+								<p>
+									<span>Ładowność przyczepy: </span>
+									{activeTruck.TrailerCapacity} T
+								</p>
+							</>
+						)}
+						{activeTruck.TrailerPalletsCapacity && (
+							<>
+								<p>
+									<span>Ładowność palet: </span>
+									{activeTruck.TrailerPalletsCapacity}
+								</p>
+							</>
+						)}
 					</div>
 					<Swiper
 						centeredSlides={true}
@@ -199,9 +271,9 @@ const Flota = () => {
 									<Image
 										src={`/svg/trucks/${truck.ImageAlias}.svg`}
 										alt={truck.CarType}
-										height={200}
-										width={200}
-										className='absolute bottom-[40px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 '
+										height={500}
+										width={750}
+										className='absolute bottom-[0px] left-1/2 transform -translate-x-1/2  '
 									/>
 								</div>
 							</SwiperSlide>

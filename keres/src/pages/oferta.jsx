@@ -33,27 +33,27 @@ const Oferta = () => {
 		{
 			cardTitle: 'doradztwo',
 			cardText:
-				'Nasze doświadczenie pozwala analizować i wybierać najlepsze opcje przewozu. Spedytorzy są zawsze gotowi pomóc w nietypowych sytuacjach, trzymając rękę na pulsie transportu',
+				'Nasze zdobyte doświadczenie daje możliwość w intuicyjny sposób wybrać najkorzystniejsze opcje. Stała kontrola przebiegu transportu pozwala przewidzieć i uniknąć błędów, które mogłyby się pojawić.',
 		},
 		{
 			cardTitle: 'odprawy',
 			cardText:
-				'Realizujemy transport poza UE, mając podpisaną umowę z agencją celną. Nasi eksperci monitorują zmiany w kodeksach prawa, gwarantując bieżącą reakcję na ewentualne modyfikacje.',
+				'Praca z transportami poza UE jest dla nas codziennością, w związku z tym mamy podpisaną umowę z agencją celną, dzięki której przebieg takiej relacji jest bezpieczny i krótszy. Nasi spedytorzy wciąż monitorują sytuację na rynku prawa, dzięki czemu mamy możliwość bieżących zmian jeśli wystąpi taka konieczność.',
 		},
 		{
 			cardTitle: 'spedycja',
 			cardText:
-				'Działalność spedycyjna umożliwia załadunek z importu i exportu. Dzięki współpracy zprzewoźnikami zapewnimy dowolność dostępności aut, także dla niestandardowych wymiarów czy tiefbett.',
+				'Działalność spedycyjna daje nam możliwość szybkiej realizacji importu/exportu z dowolnego miejsca. Stała współpraca z przewoźnikami oferuję nam pewność bezpiecznej i terminowej realizacji.',
 		},
 		{
 			cardTitle: 'transport',
 			cardText:
-				'Realizujemy transporty krajowe 24/7, obsługując różne rodzaje przesyłek. Posiadamyniezbędne ADRy do przewozu towarów niebezpiecznych. Terminowość i bezpieczeństwo tonasze priorytety.',
+				'Nasze realizacje są obsługiwane 24h/7, jeśli załadunki występują wieczorową porą są również przez nas kontrolowane, terminowe realizacje to dla nas priorytet. Posiadamy niezbędne uprawnienia do przewozu towarów niebezpiecznych, w związku z tym mogą nam Państwo powierzyć kontrolę nad realizacją ładunku.',
 		},
 		{
 			cardTitle: 'ubezpieczenia',
 			cardText:
-				'Oferujemy ubezpieczenia cargo zapewniające bezpieczeństwo mienia w transporcie. Polisy są dostosowane do różnych ładunków, chroniąc towary przed ryzykiem utraty czy uszkodzenia.',
+				'Wszystkie nasze realizacje są ubezpieczone, począwszy od transportów naszą flotą, skończywszy na realizacji transportów spedycyjnych. Dodatkowo, na prośbę klienta jesteśmy w stanie zorganizować ubezpieczenie cargo, dzięki wyłączności agenta takie tematy jesteśmy w stanie zrealizować na bieżąco.',
 		},
 	]
 	return (
@@ -81,7 +81,7 @@ const Oferta = () => {
 							return (
 								<SwiperSlide
 									key={x.cardTitle}
-									className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl bg-gradient-to-r from-yellow-light to-green-light px-8'>
+									className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl bg-gradient-to-r from-yellow-light to-green-light p-6'>
 									<CardOffert key={x.cardTitle} cardTitle={x.cardTitle} cardText={x.cardText} />
 								</SwiperSlide>
 							)
