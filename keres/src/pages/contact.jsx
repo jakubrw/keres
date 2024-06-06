@@ -16,15 +16,16 @@ const Contact = () => {
 			<div className='h-screen'>
 				<Header logoWidth={30} logoHeight={30} titleName={'Kontakt'} />
 
-				
-				<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-					<div className='flex flex-col items-center'>
-						<ExclamationTriangleIcon className='h-10 text-red-500' />
-						<p className='text font-light'>(in progress)</p>
-					</div>
-					
+				<div className='text-center m-6 mb-24'>
+					<p className='font-bold text-xl'>Keres Serafin Majchrzak</p> <p>Grunwaldzka 219/9, 80-266 Gdańsk</p>
+					<p>keres@keres.pl</p>
+					<p>NIP: 839-292-43-40</p>
+					<p>Regon: 221008128</p>
+					<p>tel. +48 667 701 046</p>
+					<p className='font-semibold'>Księgowość:</p>
+					<p>tel. +48 58 345 43 04</p>
 				</div>
-				<Footer className='w-full'/>
+				<Footer className='w-full' />
 				{/* <div>
 					<div className='flex flex-col items-center gap-0.2 text-center '>
 						<h3 className='font-bold my-2'> Keres Serafin Majchrzak</h3>

@@ -25,7 +25,7 @@ const Header = ({ titleName, subtitleName, headerBgContent }) => {
 					<h2 className='m-2 text-5xl font-black uppercase tracking-tighter text-center text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] '>
 						{titleName}
 					</h2>
-					<h3 className={`text-center italic text-xl text-blue-dark mx-4`}>{subtitleName}</h3>
+					<h3 className={`text-center italic text-xl font-bold text-blue-dark mx-4`}>{subtitleName}</h3>
 					{headerBgContent}
 				</div>
 			</header>

@@ -12,6 +12,7 @@ const Navbar = () => {
 			method: 'POST',
 			body: formData,
 		})
+		handleNavClick(0,null)
 	}
 	const LeftNavButton = ' left-0  rounded-tr-full'
 	const RightNavButton = ' right-0  rounded-tl-full'
@@ -53,9 +54,9 @@ const Navbar = () => {
 				''
 			)}
 			{navStatus == 'form' ? (
-				<form onSubmit={onSubmit} className='min-h-[60vh] grid auto-rows-max'>
-					<ContactForm />
-					<div className='self-end flex items-center justify-evenly'>
+				<form onSubmit={onSubmit} className='min-h-[80vh] flex flex-col'>
+					<ContactForm className=''/>
+					<div className='self-end h-16 w-full flex items-center justify-evenly row-span-1'>
 						<button
 							className='relative h-16 w-16 rounded-full bg-red-400'
 							onClick={() => {

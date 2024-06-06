@@ -16,6 +16,7 @@ h2 {
 	font-family: var(--font-montserrat-mono);
 }
 @import url('swiper/css');
+@import url('swiper/css/pagination');
 
 //ANIMATIONS
 

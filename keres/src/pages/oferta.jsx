@@ -3,8 +3,9 @@
 import CardOffert from '@/app/components/CardOffert'
 import Header from '../app/components/Header'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import Image from 'next/image'
+import Footer from '@/app/components/Footer'
 
 const OfertaBgContent = () => {
 	return (
@@ -74,8 +75,18 @@ const Oferta = () => {
 						centeredSlides={true}
 						loop={true}
 						spaceBetween={50}
-						modules={[Autoplay]}
+						modules={[Autoplay, Pagination]}
 						autoplay={{ delay: 6000 }}
+						pagination={{
+							dynamicBullets: true,
+						}}
+						style={{
+							"--swiper-pagination-color": "#4C7FBE",
+							"--swiper-pagination-bullet-inactive-color": "#999999",
+							"--swiper-pagination-bullet-inactive-opacity": "1",
+							"--swiper-pagination-bullet-size": "6px",
+							"--swiper-pagination-bullet-horizontal-gap": "6px"
+						  }}
 						className='h-full px-4'>
 						{offersArr.map(x => {
 							return (
@@ -88,35 +99,30 @@ const Oferta = () => {
 						})}
 					</Swiper>
 				</div>
-				<Swiper
-					centeredSlides={true}
-					loop={true}
-					spaceBetween={50}
-					modules={[Autoplay]}
-					autoplay={{ delay: 10000 }}
-					className='w-full mx-8 px-4 aspect-[3/2] text-center font-italic'>
-					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 ratio-square'>
-						Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy najlepsze
-						oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
-					</SwiperSlide>
-					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
-						Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
-						korzystamy z różnych przewoźników, aby zoptymalizować koszty transportu.
-					</SwiperSlide>
-
-					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
-						Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy.
-					</SwiperSlide>
-					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
-						Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych zleceń co
-						zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
-					</SwiperSlide>
-					<SwiperSlide className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl border border-black p-8 '>
-						Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy czym
-						nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
-					</SwiperSlide>
-				</Swiper>
+				<div className='px-4'>
+					<ul className='[&>li]:pb-2'>
+						<li>
+							Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy
+							najlepsze oferty transportowe, usprawnimy proces logistyczny, dostarczymy towar na czas.
+						</li>
+						<li>
+							{' '}
+							Każdy transport traktujemy indywidualnie, nasze stawki zawsze są konkurencyjne, ponieważ
+							korzystamy z różnych przewoźników, aby zoptymalizować koszty transportu.
+						</li>
+						<li>Przewozy realizujemy zgodnie z wymogami konwencji CMR oraz instrukcji zleceniodawcy. </li>
+						<li>
+							Współpracujemy z wiarygodnymi podwykonawcami na zasadach umów stałych lub pojedynczych
+							zleceń co zapewnia bezpieczeństwo przewożonych towarów oraz wysoką jakość obsługi.
+						</li>
+						<li>
+							Działając w głównej mierze jako spedycja, możemy w dogodnym terminie podstawić auto, przy
+							czym nie ma konieczności zgłaszania z wyprzedzeniem gotowości towaru do odbioru.
+						</li>
+					</ul>
+				</div>
 			</div>
+			<Footer />
 		</div>
 	)
 }

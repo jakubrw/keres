@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import TitlePage from './components/Titlepage'
 import Navbar from './components/Navigation'
 import { redirect } from 'next/navigation'
-import { Roboto, Montserrat } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 

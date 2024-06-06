@@ -11,7 +11,7 @@ const FormExtended = () => {
 		setFormExtendedTransportFill(x)
 	}
 	return (
-		<div className='overflow-y-auto h-screen self-start max-h-[60vh] w-full max-w-[500px] '>
+		<div className='mb-auto  overflow-y-auto h-full max-h-[65vh] self-start  w-full max-w-[500px] '>
 			<div className='mt-2 '>
 				<label htmlFor='name' className='block text-sm font-medium leading-6 text-gray-900'>
 					Imię
@@ -39,26 +39,52 @@ const FormExtended = () => {
 					className='block w-full rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
 					placeholder=''
 				/>
-				<label htmlFor='car-type' className='block text-sm font-medium leading-6 text-gray-900'>
-					Typ samochodu
+				<label htmlFor='load-type' className='block text-sm font-medium leading-6 text-gray-900'>
+					Sposób załadunku
 				</label>
-				<input
-					maxLength={30}
-					autoComplete='off'
-					name='car-type'
-					type='text'
-					list='car-types'
-					id='car-type'
-					className='block w-full rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-					placeholder=''
-				/>
-				<datalist id='car-types'>
-					<option value='bus' />
-					<option value='solówka' />
-					<option value='naczepa' />
-					<option value='niskopodwozie' />
-					<option value='inne' />
-				</datalist>
+				<div className='grid grid-cols-3 grid-rows-1 gap-4 '>
+					<div className='flex flex-col items-center'>
+						<input
+							maxLength={30}
+							autoComplete='off'
+							name='load-type-side'
+							type='checkbox'
+							list='car-types'
+							id='car-type'
+							className='block  rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+							placeholder=''
+						/>
+						<p>bok</p>
+					</div>
+					<div className='flex flex-col items-center'>
+						<input
+							maxLength={30}
+							autoComplete='off'
+							name='load-type-back'
+							type='checkbox'
+							list='car-types'
+							id='car-type'
+							className='block  rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+							placeholder=''
+						/>
+						<p>tył</p>
+					</div>
+					<div className='flex flex-col items-center'>
+						<input
+							maxLength={30}
+							autoComplete='off'
+							name='load-type-top'
+							type='checkbox'
+							list='car-types'
+							id='car-type'
+							className='block rounded-md border-0 p-2 text-gray-900  ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+							placeholder=''
+						/>
+
+						<p>góra</p>
+					</div>
+				</div>
+
 				<div className='block text-sm font-medium leading-6 text-gray-900'>
 					<p className='block text-sm font-medium leading-6 text-gray-900'>Transport</p>
 					<div className='overflow-hidden flex justify-between rounded-md  mb-4 shadow-inner shadow-stone-500 ring-inset ring-stone-500 placeholder:text-stone-200 focus:ring-2 focus:ring-inset focus:ring-green-dark sm:text-sm sm:leading-6'>
@@ -163,8 +189,16 @@ const FormExtended = () => {
 					placeholder=''
 					style={{ maxHeight: '120px' }}
 				/>
-				<div className='flex gap-2 mx-2 text-pretty'><input type='checkbox' name='agreement' id='agreement'/>
-				<label className='block text-sm font-medium leading-6 text-gray-900' htmlFor='agreement' >Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <Link href='/policy' className="font-bold underline" >polityką prywatności</Link>.</label></div>
+				<div className='flex gap-2 mt-2 text-pretty'>
+					<input required type='checkbox' name='agreement' id='agreement' />
+					<label className='block text-sm font-medium leading-6 text-gray-900' htmlFor='agreement'>
+						Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z{' '}
+						<Link href='/policy' className='font-bold underline'>
+							polityką prywatności
+						</Link>
+						.
+					</label>
+				</div>
 			</div>
 		</div>
 	)
