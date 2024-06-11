@@ -11,29 +11,56 @@ function Parallax() {
 					<Image
 						style={{ objectFit: 'cover' }}
 						fill
-						absolute
+						absolute='true'
 						src={'/svg/test/bg.svg'}
-						className='z-30 '></Image>
+						className='z-30 
+						'
+						loading='eager'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-50}>
-					<Image fill absolute src={'/svg/test/5.svg'} className='z-30 parallax parallax-5'></Image>
+					<Image
+						fill
+						absolute='true'
+						src={'/svg/test/5.svg'}
+						className='z-30 parallax parallax-5'
+						loading='lazy'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-50}>
-					<Image fill absolute src={'/svg/test/4.svg'} className='z-10 parallax parallax-4'></Image>
+					<Image
+						fill
+						absolute='true'
+						src={'/svg/test/4.svg'}
+						className='z-10 parallax parallax-4'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-30} className='parallax'>
-					<div className='relative parallax-logo-container'>
-						
-					</div>
+					<div className='relative parallax-logo-container' alt='part of landscape graphic'></div>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-50}>
-					<Image fill absolute src={'/svg/test/3.svg'} className='z-10 parallax parallax-3'></Image>
+					<Image
+						fill
+						absolute='true'
+						src={'/svg/test/3.svg'}
+						className='z-10 parallax parallax-3'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-30}>
-					<Image fill absolute src={'/svg/test/2.svg'} className='z-10 parallax parallax-2'></Image>
+					<Image
+						fill
+						absolute='true'
+						src={'/svg/test/2.svg'}
+						className='z-10 parallax parallax-2'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 				<ParallaxBannerLayer speed={-50}>
-					<Image fill absolute src={'/svg/test/1.svg'} className='z-10 parallax parallax-1'></Image>
+					<Image
+						fill
+						absolute='true'
+						src={'/svg/test/1.svg'}
+						className='z-10 parallax parallax-1'
+						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
 			</ParallaxBanner>
 		</ParallaxProvider>

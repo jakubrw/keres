@@ -66,11 +66,11 @@ const Oferta = () => {
 				subtitleName={'Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.'}
 				headerBgContent={<OfertaBgContent />}
 			/>
-			<div className=' flex flex-col items-center  gap-3'>
+			<div className=' flex flex-col items-center  gap-3 md:w-auto md:mx-[10vw]'>
 				<div>
 					<h2 className='text-2xl text-center font-bold'></h2>
 				</div>
-				<div className='w-full aspect-square '>
+				<div className='w-full  '>
 					<Swiper
 						centeredSlides={true}
 						loop={true}
@@ -81,13 +81,13 @@ const Oferta = () => {
 							dynamicBullets: true,
 						}}
 						style={{
-							"--swiper-pagination-color": "#4C7FBE",
-							"--swiper-pagination-bullet-inactive-color": "#999999",
-							"--swiper-pagination-bullet-inactive-opacity": "1",
-							"--swiper-pagination-bullet-size": "6px",
-							"--swiper-pagination-bullet-horizontal-gap": "6px"
-						  }}
-						className='h-full px-4'>
+							'--swiper-pagination-color': '#4C7FBE',
+							'--swiper-pagination-bullet-inactive-color': '#999999',
+							'--swiper-pagination-bullet-inactive-opacity': '1',
+							'--swiper-pagination-bullet-size': '6px',
+							'--swiper-pagination-bullet-horizontal-gap': '6px',
+						}}
+						className='aspect-square md:aspect-[3/2] md:mx-[15vw] h-full px-4'>
 						{offersArr.map(x => {
 							return (
 								<SwiperSlide
@@ -99,7 +99,7 @@ const Oferta = () => {
 						})}
 					</Swiper>
 				</div>
-				<div className='px-4'>
+				<div className='px-4 md:w-[70vw]'>
 					<ul className='[&>li]:pb-2'>
 						<li>
 							Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy

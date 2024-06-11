@@ -18,13 +18,19 @@ const TitlePage = () => {
 	const isInView = useInView(ref, { once: true })
 
 	return (
-		<div className='flex flex-col '>
+		<div className='flex flex-col md:justify-center'>
 			<div className='h-[120vh] w-screen relative'>
 				<div className='absolute '>
 					<div className='h-screen w-screen  relative '>
 						<div className='h-[60vh] w-auto aspect-[3/4] absolute-center z-[100]'>
 							<div className='w-[50vw] h-[30vh] relative m-auto'>
-								<Image fill absolute src={'/keres.svg'} className='z-0 parallax-logo'></Image>
+								<Image
+									fill
+									absolute='true'
+									src={'/keres.svg'}
+									className='z-0 parallax-logo'
+									alt='keres logo'
+									priority={true}></Image>
 							</div>
 							<div className='top-[50] absolute w-full z-0'>
 								<div className='flex flex-col items-center text-blue-dark'>
@@ -50,16 +56,15 @@ const TitlePage = () => {
 					</div>
 				</div>
 			</div>
-			<section>
-				<div className='m-2 p-6 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg'>
+			
+			<section ref={container} className='min-h-screen -translate-y-px text-lg flex flex-col items-center  md:mx-[10%]'>
+				<div className='m-2 p-6 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg '>
 					<p>
 						Naszą misją jest Państwa zadowolenie z wykonywanych przez nas usług i utrzymywanie stałych
 						współprac. Zaufanie którym nas obdarzacie jest siłą napędową do stałego doskonalenia i
 						podnoszenia kwalifikacji.
 					</p>
 				</div>
-			</section>
-			<section ref={container} className='min-h-screen  -translate-y-px text-lg'>
 				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-8 px-5 pb-12 '>
 					<div className=''>
 						<div className='  mb-5 antialiased'>

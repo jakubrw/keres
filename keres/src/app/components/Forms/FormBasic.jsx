@@ -1,5 +1,4 @@
-import Link from "next/link"
-
+import Link from 'next/link'
 
 const FormBasic = () => {
 	return (
@@ -56,11 +55,19 @@ const FormBasic = () => {
 					name='text'
 					id='text'
 					maxLength={200}
-					className='block w-full rounded-md border-0 p-2 text-gray-900  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-light sm:text-sm sm:leading-6'
+					className='block w-full rounded-md border-0 p-2 text-gray-900  placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-light sm:text-sm sm:leading-6 max-h-[200px]'
 					placeholder=''
 				/>
-				<div className='flex gap-2 mt-2 text-pretty'><input required type='checkbox' name='agreement' id='agreement'/>
-				<label className='block text-sm font-medium leading-6 text-gray-900' htmlFor='agreement' >Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <Link href='/policy' className="font-bold underline" >polityką prywatności</Link>.</label></div>
+				<div className='flex gap-2 mt-2 text-pretty'>
+					<input required type='checkbox' name='agreement' id='agreement' />
+					<label className='block text-sm font-medium leading-6 text-gray-900' htmlFor='agreement'>
+						Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z{' '}
+						<Link href='/policy' className='font-bold underline'>
+							polityką prywatności
+						</Link>
+						.
+					</label>
+				</div>
 			</div>
 		</div>
 	)

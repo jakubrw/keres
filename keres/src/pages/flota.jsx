@@ -3,7 +3,7 @@ import Header from '@/app/components/Header'
 import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
+import { Pagination } from 'swiper/modules'
 import { Pacifico } from 'next/font/google'
 
 const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
@@ -37,7 +37,7 @@ const trucksTypes = [
 		PalletsCapacity: 18,
 		Dimensions: [730, 248, 295],
 		LoadType: ['bok', 'tył', 'góra'],
-		ConstructionType: '',
+		ConstructionType: 'plandeka',
 		AdditionalInformations: '',
 		ImageAlias: 'maja',
 	},
@@ -45,48 +45,53 @@ const trucksTypes = [
 		CarName: 'zestaw Maja',
 		Capacity: 1.5,
 		PalletsCapacity: 12,
-		Dimensions: [490, 245, 285],
+		Dimensions: [730, 248, 295],
 		LoadType: ['bok', 'tył', 'góra'],
-		ConstructionType: 'firanka',
+		ConstructionType: 'plandeka',
+		TrailerCapacity: 2.4,
+		TrailerPalletsCapacity: 10,
+		TrailerDimensions: [800, 248, 300],
+		TrailerLoadType: ['bok', 'tył', 'góra'],
+		TrailerConstructionType: 'plandeka',
 		AdditionalInformations: '',
 		ImageAlias: 'zestaw-maja',
 	},
 	{
 		CarName: 'Gośka',
-		Capacity: 1.2,
-		PalletsCapacity: 10,
-		Dimensions: [420, 245, 250],
-		LoadType: ['bok', 'tył'],
-		ConstructionType: 'firanka',
-		AdditionalInformations: 'Winda - udźwig 750kg',
+		Capacity: 1.5,
+		PalletsCapacity: 12,
+		Dimensions: [490, 245, 285],
+		LoadType: ['bok', 'tył', 'góra'],
+		ConstructionType: 'plandeka',
+		AdditionalInformations: '',
 		ImageAlias: 'goska',
 	},
 	{
 		CarName: 'Iwonka',
 		Capacity: 1.2,
-		PalletsCapacity: 8,
-		Dimensions: [460, 170, 210],
-		LoadType: { 'drzwi bok': [120, 179], 'drzwi tył': [151, 195] },
-		ConstructionType: 'blaszak',
+		PalletsCapacity: 10,
+		Dimensions: [420, 245, 250],
+		LoadType: ['bok', 'tył', 'winda'],
+		ConstructionType: 'plandeka',
 		AdditionalInformations: '',
 		ImageAlias: 'iwonka',
 	},
 	{
 		CarName: 'Szaraczek',
-		Capacity: 1,
-		PalletsCapacity: 6,
-		Dimensions: [437, 170, 190],
+		Capacity: 1.2,
+		PalletsCapacity: 8,
+		Dimensions: [460, 170, 210],
 		LoadType: { 'drzwi bok': [120, 178], 'drzwi tył': [143, 177] },
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
 		ImageAlias: 'szarak',
 	},
 	{
-		CarName: 'Szprota',
-		Capacity: 0.5,
-		PalletsCapacity: '',
-		Dimensions: [140, 90, 130],
-		LoadType: { 'drzwi tył': '' },
+		CarName: 'Szprotka',
+		Capacity: 1,
+		PalletsCapacity: '6',
+		Dimensions: [437, 170, 190],
+		LoadType: ['drzwi tył', 'drzwi bok'],
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
 		ImageAlias: 'szprota',
@@ -94,44 +99,46 @@ const trucksTypes = [
 	{
 		CarName: 'Caddy',
 		Capacity: 0.5,
-		PalletsCapacity: 2,
-		Dimensions: [300, 120, 128],
-		LoadType: { 'drzwi tył': '' },
+		PalletsCapacity: 1,
+		Dimensions: [140, 90, 130],
+		LoadType: ['drzwi tył'],
 		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
 		ImageAlias: 'caddy',
 	},
 	{
 		CarName: 'Zośka',
-		Capacity: 13.6,
-		PalletsCapacity: 33,
-		Dimensions: [1360, 245, 300],
-		LoadType: ['bok', 'tył', 'góra'],
-		ConstructionType: 'plandeka',
+		Capacity: 0.5,
+		PalletsCapacity: 2,
+		Dimensions: [300, 120, 128],
+		LoadType: ['drzwi tył'],
+		ConstructionType: 'blaszak',
 		AdditionalInformations: '',
 		ImageAlias: 'zoska',
 	},
 	{
 		CarName: 'Gośka + Lora',
-		Capacity: 0.5,
-		PalletsCapacity: '',
-		Dimensions: [140, 90, 130],
-		LoadType: ['drzwi tył'],
+		Capacity: 1,
+		PalletsCapacity: 12,
+		Dimensions: [490, 245, 285],
+		LoadType: ['bok', 'tył', 'góra'],
+		ConstructionType: 'plandeka',
 		TrailerCapacity: 2.4,
 		TrailerDimensions: [800, 225, 60],
-		ConstructionType: 'blaszak',
+		TrailerConstructionType: 'odkryta',
 		AdditionalInformations: '',
 		ImageAlias: 'lora-goska',
 	},
 	{
 		CarName: 'Szarak + Lora',
 		Capacity: 1,
-		PalletsCapacity: 12,
+		PalletsCapacity: 8,
 		Dimensions: [460, 170, 210],
 		ConstructionType: 'blaszak',
-		LoadType: ['drzwi tył'],
+		LoadType: ['drzwi tył', 'drzwi bok'],
 		TrailerCapacity: 2.4,
 		TrailerDimensions: [800, 225, 60],
+		TrailerConstructionType: 'odkryta',
 		AdditionalInformations: '',
 		ImageAlias: 'lora-szarak',
 	},
@@ -140,23 +147,23 @@ const trucksTypes = [
 		Capacity: 1,
 		PalletsCapacity: 12,
 		Dimensions: [490, 245, 265],
-		ConstructionType: 'blaszak',
-		LoadType: ['drzwi tył'],
+		ConstructionType: 'plandeka',
+		LoadType: ['bok', 'tył', 'góra'],
 		TrailerCapacity: 2.4,
 		TrailerPalletsCapacity: 10,
 		TrailerDimensions: [520, 220, 250],
 		TrailerLoadType: ['drzwi tył'],
 		TrailerConstructionType: 'plandeka',
 		AdditionalInformations: '',
-		ImageAlias: 'lora-goska',
+		ImageAlias: 'zestaw-goska',
 	},
 	{
 		CarName: 'Szarak + Plandeka',
 		Capacity: 1,
 		PalletsCapacity: 8,
-		Dimensions: [460, 270, 210],
+		Dimensions: [460, 170, 210],
 		ConstructionType: 'blaszak',
-		LoadType: ['drzwi tył'],
+		LoadType: ['drzwi tył', 'drzwi bok'],
 		TrailerCapacity: 2.4,
 		TrailerPalletsCapacity: 10,
 		TrailerDimensions: [520, 220, 250],
@@ -167,11 +174,11 @@ const trucksTypes = [
 	},
 	{
 		CarName: 'Bogusia',
-		Capacity: 24,
+		Capacity: 28,
 		PalletsCapacity: 33,
-		Dimensions: [1360, 245, 300],
+		Dimensions: [1360, 248, 300],
 		LoadType: ['bok', 'tył', 'góra'],
-		ConstructionType: 'blaszak',
+		ConstructionType: 'plandeka',
 		AdditionalInformations: '',
 		ImageAlias: 'bogusia',
 	},
@@ -181,7 +188,7 @@ const Flota = () => {
 	const [activeTruck, setActiveTruck] = useState(trucksTypes[0])
 
 	const handleSlideChange = swiper => {
-		const currentSlide = swiper.realIndex // Use realIndex instead of activeIndex
+		const currentSlide = swiper.realIndex
 		setActiveTruck(trucksTypes[currentSlide])
 	}
 
@@ -238,11 +245,12 @@ const Flota = () => {
 								<p>{activeTruck.AdditionalInformations}</p>
 							</>
 						)}
+						{activeTruck.TrailerCapacity && <p className='font-bold pt-1'> Przyczepa</p>}
 						{activeTruck.TrailerCapacity && (
 							<>
 								<p>
-									<span>Ładowność przyczepy: </span>
-									{activeTruck.TrailerCapacity} T
+									<span>Ładowność: </span>
+									<span>{activeTruck.TrailerCapacity} T</span>
 								</p>
 							</>
 						)}
@@ -254,15 +262,50 @@ const Flota = () => {
 								</p>
 							</>
 						)}
+						{activeTruck.TrailerDimensions && activeTruck.TrailerDimensions.length > 0 && (
+							<p>
+								<span>Wymiary:</span> <span>{activeTruck.TrailerDimensions.join(' x ')} cm</span>
+							</p>
+						)}
+						{activeTruck.TrailerLoadType &&
+							(Array.isArray(activeTruck.TrailerLoadType)
+								? activeTruck.TrailerLoadType.length > 0 && (
+										<p>
+											<span>Sposób załadunku:</span>{' '}
+											<span>{activeTruck.TrailerLoadType.join(', ')}</span>
+										</p>
+								  )
+								: Object.keys(activeTruck.TrailerLoadType).length > 0 && (
+										<p>
+											<span>Sposób załadunku:</span>{' '}
+											<span>{Object.keys(activeTruck.TrailerLoadType).join(', ')}</span>
+										</p>
+								  ))}
+						{activeTruck.TrailerConstructionType && (
+							<p>
+								<span>Typ zabudowy: </span>
+								<span>{activeTruck.TrailerConstructionType}</span>
+							</p>
+						)}
 					</div>
 					<Swiper
 						centeredSlides={true}
 						loop={true}
 						spaceBetween={50}
-						modules={[Autoplay]}
+						modules={[Pagination]}
 						autoplay={{ delay: 4000 }}
 						className='h-full overflow-hidden bottom'
-						onSlideChange={swiper => handleSlideChange(swiper)}>
+						onSlideChange={swiper => handleSlideChange(swiper)}
+						pagination={{
+							dynamicBullets: true,
+						}}
+						style={{
+							'--swiper-pagination-color': '#F6CF1A',
+							'--swiper-pagination-bullet-inactive-color': '#4C7FBE',
+							'--swiper-pagination-bullet-inactive-opacity': '1',
+							'--swiper-pagination-bullet-size': '8px',
+							'--swiper-pagination-bullet-horizontal-gap': '8px',
+						}}>
 						{trucksTypes.map((truck, index) => (
 							<SwiperSlide
 								key={index}
@@ -270,7 +313,7 @@ const Flota = () => {
 								<div className='h-1/3 '>
 									<Image
 										src={`/svg/trucks/${truck.ImageAlias}.svg`}
-										alt={truck.CarType}
+										alt={`${truck.CarType}`}
 										height={500}
 										width={750}
 										className='absolute bottom-[0px] left-1/2 transform -translate-x-1/2  '
