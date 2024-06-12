@@ -1,126 +1,128 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Bars3Icon, PaperAirplaneIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import ContactForm from './Forms/ContactForm'
 
 const Navbar = () => {
-	async function onSubmit(event) {
-		event.preventDefault()
-		const formData = new FormData(event.target)
-		const response = await fetch('/api/submit', {
-			method: 'POST',
-			body: formData,
-		})
-		handleNavClick(0,null)
-	}
-	const LeftNavButton = ' left-0  rounded-tr-full'
-	const RightNavButton = ' right-0  rounded-tl-full'
-	const NavButton = 'absolute bottom-0 h-16 w-16'
+    const [navStatus, setNavStatus] = useState(null)
+    const [navOpen, setNavOpen] = useState(false)
 
-	const [navStatus, setNavStatus] = useState(null)
-	const [navOpen, setNavOpen] = useState(0)
+    async function onSubmit(event) {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        await fetch('/api/submit', {
+            method: 'POST',
+            body: formData,
+        })
+        handleNavClick(false, null)
+    }
 
-	const handleNavClick = (isOn, contentType) => {
-		setNavOpen(isOn)
-		setNavStatus(contentType)
-	}
+    const handleNavClick = (isOpen, contentType) => {
+        setNavOpen(isOpen)
+        setNavStatus(contentType)
+    }
 
-	const NavContainer = (
-		<div className='max-h-screen w-screen p-5 bg-yellow-light absolute z-[200] bottom-0 '>
-			{navStatus == 'menu' ? (
-				<div className=''>
-					<div
-						onClick={() => {
-							handleNavClick(0, null)
-						}}
-						className=' flex flex-col justify-center items-center uppercase text-4xl gap-8 bold mb-20 '>
-						<Link href='/'>home</Link>
-						<Link href='/oferta'>oferta</Link>
-						<Link href='/flota'>flota</Link>
-						<Link href='/contact'>kontakt</Link>
-					</div>
-					<div className='h-full w-full flex items-center justify-center'>
-						<div
-							className='relative h-16 w-16 rounded-full bg-red-400'
-							onClick={() => {
-								handleNavClick(0, null)
-							}}>
-							<XMarkIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ' />
-						</div>
-					</div>
-				</div>
-			) : (
-				''
-			)}
-			{navStatus == 'form' ? (
-				<form onSubmit={onSubmit} className='min-h-[80vh] flex flex-col'>
-					<ContactForm className=''/>
-					<div className='self-end h-16 w-full flex items-center justify-evenly row-span-1'>
-						<button
-							className='relative h-16 w-16 rounded-full bg-red-400'
-							onClick={() => {
-								handleNavClick(0, null)
-							}}>
-							<XMarkIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ' />
-						</button>
-						<button type='submit' className='relative h-16 w-16 rounded-full bg-green-dark '>
-							<PaperAirplaneIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ' />
-						</button>
-					</div>
-				</form>
-			) : (
-				''
-			)}
-		</div>
-	)
+    const NavButton = 'absolute bottom-0 h-16 w-16'
+    const LeftNavButton = `${NavButton} left-0 rounded-tr-full`
+    const RightNavButton = `${NavButton} right-0 rounded-tl-full`
 
-	return (
-		<nav id='nav' className='navbar fixed bottom-0 w-full z-[150] '>
-			{navOpen == 1 ? NavContainer : ''}
-			<div className='menu-icon flex justify-between h-[20px] '>
-				<div
-					className={`${NavButton + LeftNavButton} bg-yellow-light  `}
-					onClick={() => {
-						handleNavClick(1, 'menu')
-					}}>
-					<Bars3Icon className='h-10 absolute bottom-0 left-0 m-1' />
-				</div>
+    const NavContainer = (
+        <>
+            {navStatus === 'menu' && (
+                <div className='max-h-screen w-screen p-5 bg-yellow-light absolute z-[200] bottom-0 md:hidden'>
+                    <div
+                        onClick={() => handleNavClick(false, null)}
+                        className='flex flex-col justify-center items-center uppercase text-4xl gap-8 bold mb-20'
+                    >
+                        <Link href='/' className='focus:outline-none focus:ring-2 focus:ring-yellow-600'>home</Link>
+                        <Link href='/oferta' className='focus:outline-none focus:ring-2 focus:ring-yellow-600'>oferta</Link>
+                        <Link href='/flota' className='focus:outline-none focus:ring-2 focus:ring-yellow-600'>flota</Link>
+                        <Link href='/contact' className='focus:outline-none focus:ring-2 focus:ring-yellow-600'>kontakt</Link>
+                    </div>
+                    <div className='h-full w-full flex items-center justify-center'>
+                        <button
+                            className='relative h-16 w-16 rounded-full bg-red-400'
+                            onClick={() => handleNavClick(false, null)}
+                            aria-label="Close Menu"
+                        >
+                            <XMarkIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+                        </button>
+                    </div>
+                </div>
+            )}
+            {navStatus === 'form' && (
+                <div className='fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-50'>
+                    <div className='bg-yellow-light p-5 rounded-lg w-full max-w-md mx-auto'>
+                        <form onSubmit={onSubmit} className='flex flex-col'>
+                            <ContactForm />
+                            <div className='self-end flex items-center justify-evenly mt-4 w-full'>
+                                <button
+                                    className='relative h-16 w-16 rounded-full bg-red-400'
+                                    onClick={() => handleNavClick(false, null)}
+                                    aria-label="Close Form"
+                                >
+                                    <XMarkIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+                                </button>
+                                <button type='submit' className='relative h-16 w-16 rounded-full bg-green-dark' aria-label="Submit Form">
+                                    <PaperAirplaneIcon className='h-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+        </>
+    )
 
-				<div
-					className={`${NavButton + RightNavButton} bg-green-light `}
-					onClick={() => {
-						handleNavClick(1, 'form')
-					}}>
-					<PaperAirplaneIcon className='h-10 absolute bottom-0 right-0 m-1' />
-				</div>
-			</div>
-		</nav>
-	)
+    return (
+        <>
+            {/* Mobile Navigation */}
+            <nav id='nav' className='navbar fixed bottom-0 w-full z-[150] md:hidden'>
+                {navOpen && NavContainer}
+                <div className='menu-icon flex justify-between h-[20px]'>
+                    <button
+                        className={`${LeftNavButton} bg-yellow-light`}
+                        onClick={() => handleNavClick(true, 'menu')}
+                        aria-label="Open Menu"
+                    >
+                        <Bars3Icon className='h-10 absolute bottom-0 left-0 m-1' />
+                    </button>
+                    <button
+                        className={`${RightNavButton} bg-green-light`}
+                        onClick={() => handleNavClick(true, 'form')}
+                        aria-label="Open Form"
+                    >
+                        <PaperAirplaneIcon className='h-10 absolute bottom-0 right-0 m-1' />
+                    </button>
+                </div>
+            </nav>
+
+            {/* Desktop Navigation */}
+            <>
+                {navOpen && NavContainer}
+                <nav id='nav' className='hidden md:flex fixed w-full justify-between items-center bg-yellow-light p-5 z-[150]'>
+                    <div className='flex space-x-10'>
+                        <Link href='/' className='text-2xl uppercase'>
+                            <Image src={'/logo.svg'} height={50} width={50} alt='company logo' />
+                        </Link>
+                        <Link href='/oferta' className='text-2xl uppercase'>Oferta</Link>
+                        <Link href='/flota' className='text-2xl uppercase'>Flota</Link>
+                        <Link href='/contact' className='text-2xl uppercase'>Kontakt</Link>
+                    </div>
+                    <button
+                        className='flex items-center space-x-2 bg-green-dark text-white py-2 px-4 rounded-full'
+                        onClick={() => handleNavClick(true, 'form')}
+                        aria-label="Open Form"
+                    >
+                        <PaperAirplaneIcon className='h-5 w-5' />
+                        <span>Napisz do nas</span>
+                    </button>
+                </nav>
+            </>
+        </>
+    )
 }
 
 export default Navbar
-
-// {isOpenForm && (
-// 	<div className='fixed bottom-0 h-5/6 w-full z-3'>
-// 		<nav className='fixed pt-5 0 mt-[100px] ml-[-50%] w-[200%] rounded-t-[100%] bg-gray-400 h-5/6'>
-// 			<div className='flex flex-col items-center justify-between gap-y-2 m-0 h-auto'>
-// 				<div className='uppercase font-black text-2xl pt-5'>Napisz do nas!</div>
-// 				<div className=''>
-// 					<ContactForm />
-// 				</div>
-
-// 				<div className='relative h-16 w-screen'>
-// 					<div
-// 						className='absolute bottom-0 left-0 h-16 w-16 bg-red-500 rounded-tr-full'
-// 						onClick={}>
-
-// 					</div>
-// 					<div className='absolute bottom-0 right-0 h-16 w-16 bg-lime-500 rounded-tl-full'>
-
-// 					</div>
-// 				</div>
-// 			</div>
-// 		</nav>
-// 	</div>
-// )}

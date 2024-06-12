@@ -10,7 +10,7 @@ const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 
 const Home = () => {
 	return (
-		<main className={`min-h-screen ${roboto.className} w-screen`}>
+		<main className={`min-h-screen ${roboto.className} w-screen md:w-full`}>
 			<>
 				<Navbar className='z-[150]' />
 				<TitlePage />

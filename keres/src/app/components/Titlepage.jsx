@@ -19,7 +19,7 @@ const TitlePage = () => {
 
 	return (
 		<div className='flex flex-col md:justify-center'>
-			<div className='h-[120vh] w-screen relative'>
+			<div className='h-[120vh] w-full relative overflow-hidden'>
 				<div className='absolute '>
 					<div className='h-screen w-screen  relative '>
 						<div className='h-[60vh] w-auto aspect-[3/4] absolute-center z-[100]'>

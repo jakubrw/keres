@@ -20,12 +20,12 @@ const FlotaBgContent = () => {
 				src='/svg/car-left.svg'
 				width={100}
 				height={100}
-				className='absolute z-[-10] top-0 right-0  blur-[2px]'></Image>
+				className='absolute z-[-10] top-0 right-1/2 translate-x-[200%]  blur-[2px]'></Image>
 			<Image
 				src='/svg/car-right.svg'
 				width={100}
 				height={100}
-				className='absolute z-[-10] top-0 left-0  blur-[2px]'></Image>
+				className='absolute z-[-10] top-0 right-1/2 translate-x-[-100%]  blur-[2px]'></Image>
 		</>
 	)
 }
@@ -200,7 +200,7 @@ const Flota = () => {
 					className={` ${pacifico.className} text-center text-3xl capitalize font-bolder uppercase tracking-tighter text-blue-light  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] my-5`}>
 					{activeTruck.CarName}
 				</h2>
-				<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg border border-black'>
+				<div className='relative aspect-[2/3] w-4/5 overflow-hidden rounded-lg border border-black md:aspect-square'>
 					<div className='animation animation-face animation-layer4 blur-[2px] ' />
 					<div className=' absolute flex flex-col items-center justify-evenly top w-full py-5 bg-gray-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-40 border-b border-gray-300 [&>p>:nth-child(1)]:font-bold'>
 						{activeTruck.Capacity && (
