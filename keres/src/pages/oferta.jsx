@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import Image from 'next/image'
 import Footer from '@/app/components/Footer'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const OfertaBgContent = () => {
 	return (
@@ -30,6 +33,15 @@ const OfertaBgContent = () => {
 }
 
 const Oferta = () => {
+	const [expandedCard, setExpandedCard] = useState(null)
+
+	const handleCardClick = index => {
+		if (expandedCard === index) {
+			setExpandedCard(null)
+		} else {
+			setExpandedCard(index)
+		}
+	}
 	const offersArr = [
 		{
 			cardTitle: 'doradztwo',
@@ -66,15 +78,12 @@ const Oferta = () => {
 				subtitleName={'Kompleksowo obsługujemy firmy z różnych gałęzi handlu i przemysłu.'}
 				headerBgContent={<OfertaBgContent />}
 			/>
-			<div className=' flex flex-col items-center  gap-3 md:w-auto md:mx-[10vw]'>
-				<div>
-					<h2 className='text-2xl text-center font-bold'></h2>
-				</div>
-				<div className='w-full  '>
+			<div className='flex flex-col items-center  gap-3 '>
+				<div className='w-full  md:hidden'>
 					<Swiper
 						centeredSlides={true}
 						loop={true}
-						spaceBetween={50}
+						spaceBetween={800}
 						modules={[Autoplay, Pagination]}
 						autoplay={{ delay: 6000 }}
 						pagination={{
@@ -87,7 +96,7 @@ const Oferta = () => {
 							'--swiper-pagination-bullet-size': '6px',
 							'--swiper-pagination-bullet-horizontal-gap': '6px',
 						}}
-						className='aspect-square md:aspect-[3/2] md:mx-[15vw] h-full px-4'>
+						className='aspect-square md:aspect-[3/2] md:max-w-[600px] h-full px-4'>
 						{offersArr.map(x => {
 							return (
 								<SwiperSlide
@@ -98,6 +107,43 @@ const Oferta = () => {
 							)
 						})}
 					</Swiper>
+				</div>
+				<div className='hidden aspect-[4/2] w-full md:block md:w-[70vw] overflow-hidden lg:aspect-[4/1]'>
+					<div className='flex flex-row items-center justify-center h-full bg-gradient-to-r from-yellow-light to-green-light overflow-hidden rounded-xl'>
+						{offersArr.map((x, index) => (
+							<motion.div
+								key={index}
+								className={`h-full ${
+									expandedCard === index ? 'w-full' : 'w-1/5'
+								} flex flex-col items-center justify-center text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl p-6 cursor-pointer border overflow-hidden`}
+								onClick={() => handleCardClick(index)}
+								whileTap={{ scale: 0.95 }}
+								animate={{ width: expandedCard === index ? '100%' : '20%' }}
+								transition={{ duration: 0.3 }}>
+								<div>
+									{expandedCard === index ? (
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											transition={{ duration: 0.2, delay: 0.3 }}
+											className='flex flex-col items-center'>
+											<div>
+												<h2 className='font-bold uppercase text-lg'>{x.cardTitle}</h2>
+												<p className='self-stretch text-left py-6'>{x.cardText}</p>
+												<Link
+													href={`/oferta/${x.cardTitle}`}
+													className='w-full  bg-black-100 pointer-events-auto text-right'>
+													kliknij po więcej
+												</Link>
+											</div>
+										</motion.div>
+									) : (
+										<p className='rotate-90 uppercase font-bold'>{x.cardTitle}</p>
+									)}
+								</div>
+							</motion.div>
+						))}
+					</div>
 				</div>
 				<div className='px-4 md:w-[70vw]'>
 					<ul className='[&>li]:pb-2'>

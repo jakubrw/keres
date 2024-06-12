@@ -31,7 +31,7 @@ const Navbar = () => {
 	const NavContainer = (
 		<>
 			{navStatus === 'menu' && (
-				<div className='max-h-screen w-screen p-5 bg-yellow-light absolute z-[200] bottom-0 md:hidden'>
+				<div className='max-h-screen w-full p-5 bg-yellow-light absolute z-[200] bottom-0 md:hidden'>
 					<div
 						onClick={() => handleNavClick(false, null)}
 						className='flex flex-col justify-center items-center uppercase text-4xl gap-8 bold mb-20'>

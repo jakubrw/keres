@@ -21,10 +21,9 @@ h2 {
 //ANIMATIONS
 
 .animationContainer {
-	overflow: hidden; /* Hide overflow to prevent horizontal scroll */
+	overflow: hidden;
 }
 
-/* Define animation keyframes */
 @keyframes moveRight {
 	from {
 		background-position-x: 1200%;
@@ -44,5 +43,3 @@ h2 {
 	background-image: url(../../public/svg/animation/animation.jpg);
 	z-index: -30;
 }
-
-

@@ -16,7 +16,7 @@ const TitlePage = () => {
 	const isInView = useInView(ref, { once: true })
 
 	return (
-		<div className='flex flex-col md:items-center lg:items-start xl:items-center'>
+		<div className='flex flex-col md:items-center '>
 			<div className='h-[120vh] w-full relative overflow-hidden'>
 				<div className='absolute'>
 					<div className='h-screen w-screen relative'>

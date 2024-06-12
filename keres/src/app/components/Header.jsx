@@ -9,12 +9,12 @@ const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] })
 const Header = ({ titleName, subtitleName, headerBgContent }) => {
 	return (
 		<>
-			<header className='w-full'>
+			<header className='w-full '>
 				<Navigation />
-				<div className='flex flex-col items-center pt-2 relative '>
-					<Link href='/'>
+				<div className='flex flex-col items-center relative pt-2 md:pt-20  '>
+					<Link href='/' className='md:hidden'>
 						<Image
-							className='relative  z-0'
+							className='relative z-0'
 							src='/logo.svg'
 							alt='keres logo'
 							width={60}
@@ -22,11 +22,11 @@ const Header = ({ titleName, subtitleName, headerBgContent }) => {
 							priority
 						/>
 					</Link>
-					<h2 className='m-2 text-5xl font-black uppercase tracking-tighter text-center text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] '>
+					<h2 className='m-2 text-5xl font-black uppercase tracking-tighter text-center text-green-dark drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,366)] md:m-0'>
 						{titleName}
 					</h2>
-					<h3 className={`text-center italic text-xl font-bold text-blue-dark mx-4`}>{subtitleName}</h3>
-					{headerBgContent}
+					<h3 className={`text-center italic text-xl font-bold text-blue-dark mx-4 `}>{subtitleName}</h3>
+					<div className='md:hidden'>{headerBgContent}</div>
 				</div>
 			</header>
 		</>
