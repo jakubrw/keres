@@ -126,7 +126,7 @@ const Navbar = () => {
 						</Link>
 					</div>
 					<button
-						className='flex items-center space-x-2 bg-green-dark text-white py-2 px-4 rounded-full'
+						className='flex items-center space-x-2  bg-gradient-to-r from-teal-500 to-green-500 bg-green-dark hover:from-teal-600 hover:to-green-600 text-white py-2 px-4 rounded-full'
 						onClick={() => handleNavClick(true, 'form')}
 						aria-label='Open Form'>
 						<PaperAirplaneIcon className='h-5 w-5' />

@@ -16,7 +16,7 @@ const TitlePage = () => {
 	const isInView = useInView(ref, { once: true })
 
 	return (
-		<div className='flex flex-col md:items-center '>
+		<div className='flex flex-col items-center'>
 			<div className='h-[120vh] w-full relative overflow-hidden'>
 				<div className='absolute'>
 					<div className='h-screen w-screen relative'>
@@ -30,7 +30,7 @@ const TitlePage = () => {
 									priority={true}
 								/>
 							</div>
-							<div className='top-[50] absolute w-full z-0'>
+							<div className='absolute top-1/2 transform -translate-y-1/2 w-full z-0'>
 								<div className='flex flex-col items-center text-blue-dark'>
 									<h1 className='text-6xl uppercase font-black lg:text-7xl xl:text-8xl'>keres</h1>
 									<Typewriter
@@ -45,7 +45,7 @@ const TitlePage = () => {
 											deleteSpeed: 35,
 										}}
 									/>
-									<ChevronDoubleDownIcon className='h-4 text-neutral-600 animate-bounce' aria-label="Scroll down" />
+									<ChevronDoubleDownIcon className='h-8 text-neutral-600 animate-bounce mt-4' aria-label="Scroll down" />
 								</div>
 							</div>
 						</div>
@@ -56,16 +56,26 @@ const TitlePage = () => {
 
 			<section
 				ref={container}
-				className='min-h-screen -translate-y-px text-lg flex flex-col items-center md:mx-[10%] md:w-1/2 md:min-h-0 lg:mx-[5%] lg:w-[60%] xl:mx-[15%] xl:w-[50%] p-4 lg:p-6 xl:p-8'
+				className='min-h-screen -translate-y-px text-lg flex flex-col items-center px-4 md:mx-[10%] md:w-1/2 '
 			>
-				<div className='m-2 p-6 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg'>
+				<motion.div 
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='my-4 p-8 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg shadow-lg'
+				>
 					<p>
 						Naszą misją jest Państwa zadowolenie z wykonywanych przez nas usług i utrzymywanie stałych
 						współprac. Zaufanie którym nas obdarzacie jest siłą napędową do stałego doskonalenia i
 						podnoszenia kwalifikacji.
 					</p>
-				</div>
-				<motion.div className='flex min-h-screen flex-col items-center rounded-lg p-8 px-5 md:min-h-0 md:h-full lg:min-h-0 lg:h-full xl:min-h-0 xl:h-full'>
+				</motion.div>
+				<motion.div 
+					initial={{ opacity: 0, scale: 0.9 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.6, ease: 'easeOut' }}
+					className='flex min-h-screen flex-col items-center rounded-lg p-8 md:h-full lg:h-full xl:h-full bg-white bg-opacity-80 shadow-xl md:min-h-full md:mb-4'
+				>
 					<div className=''>
 						<div className='mb-5 antialiased'>
 							<p>
@@ -76,7 +86,7 @@ const TitlePage = () => {
 								oraz zespół pracowników.
 							</p>
 						</div>
-						<div className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40 w-full overflow-hidden rounded-lg bg-gradient-to-r from-yellow-light to-green-light'>
+						<div className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40 w-full overflow-hidden rounded-lg bg-gradient-to-r from-yellow-light to-green-light shadow-md'>
 							<div
 								ref={ref}
 								style={{
@@ -97,10 +107,12 @@ const TitlePage = () => {
 								<p className='text-lg uppercase font-bold'>odwiedzonych krajów</p>
 							</div>
 						</div>
-						<div className='mt-2'>
-							Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
-							zaangażowaniem. W związku z tym jeśli są sytuacje niespodziewane działamy ekspresowo,
-							ponieważ wiemy o tym od razu!
+						<div className='mt-4 p-4 bg-gradient-to-r from-yellow-light to-green-dark rounded-lg italic shadow-lg '>
+							<p>
+								Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
+								zaangażowaniem. W związku z tym jeśli są sytuacje niespodziewane działamy ekspresowo,
+								ponieważ wiemy o tym od razu!
+							</p>
 						</div>
 					</div>
 				</motion.div>

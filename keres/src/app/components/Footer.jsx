@@ -3,12 +3,12 @@ import LeafletDynamic from './LeafletDynamic'
 
 const Footer = () => {
 	return (
-		<div className='py-2 bg-gray-200 flex flex-col items-center text-sm w-full h-[50vh] '>
+		<div className='py-2 bg-gray-200 flex flex-col items-center text-sm w-full h-[50vh] md:mb-2'>
 			<div className='h-8'>
-				<p className='text-lg font-bold uppercase font-mono'>Znajdź nas</p>
+				<p className='text-lg font-bold uppercase font-mono md:text-2xl '>Znajdź nas</p>
 			</div>
 			<div className=' flex flex-col items-center w-full h-[50vh] md:flex-row md:justify-center'>
-				<div className='h-4/5 w-[90vw] rounded-xl overflow-hidden m-2 border border-gray-500 md:w-[80%]'>
+				<div className='h-2/3 w-[90vw] rounded-xl overflow-hidden m-2 border border-gray-500 md:w-[60%] md:h-full lg:w-[40%] '>
 					<LeafletDynamic />
 				</div>
 				<div className='flex gap-x-2 md:flex-col md:gap-y-8 '>
