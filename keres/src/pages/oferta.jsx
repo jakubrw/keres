@@ -17,21 +17,21 @@ const OfertaBgContent = () => {
 				src='/svg/boxes/boxes-open.svg'
 				width={200}
 				height={200}
-				className='absolute z-[-20] top-0 right-0 blur-sm opacity-60'
+				className='absolute z-[-5] top-0 right-0 blur-sm opacity-[2px]'
 				alt='Open Box'
 			/>
 			<Image
 				src='/svg/boxes/box-open-flat.svg'
 				width={200}
 				height={200}
-				className='absolute z-[-10] top-0 left-0 blur-sm opacity-60'
+				className='absolute z-[-10] top-0 left-0 blur-sm opacity-[2px]'
 				alt='Flat Open Box'
 			/>
 			<Image
 				src='/svg/boxes/boxes-closed.svg'
 				width={200}
 				height={200}
-				className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[1px] opacity-60'
+				className='absolute z-[-10] top-0 right-1/2 translate-x-1/2 blur-[1px] opacity-[2px]'
 				alt='Closed Boxes'
 			/>
 		</>
@@ -78,7 +78,7 @@ const Oferta = () => {
 	]
 
 	return (
-		<div className='min-h-screen w-full relative bg-gradient-to-r from-gray-100 to-gray-200 md:min-h-[400px]'>
+		<div className='min-h-screen w-full relative  md:min-h-[400px]'>
 			<Header
 				logoWidth={30}
 				logoHeight={30}
@@ -104,7 +104,7 @@ const Oferta = () => {
 							'--swiper-pagination-bullet-size': '6px',
 							'--swiper-pagination-bullet-horizontal-gap': '6px',
 						}}
-						className='aspect-square md:aspect-[3/2] md:max-w-[600px] h-full px-4'>
+						className='aspect-square md:aspect-[3/2] md:max-w-[600px] h-full px-4 '>
 						{offersArr.map((x, index) => (
 							<SwiperSlide
 								key={index}

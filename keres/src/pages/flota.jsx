@@ -16,18 +16,21 @@ const FlotaBgContent = () => {
                 width={300}
                 height={300}
                 className='absolute z-[-5] top-0 right-1/2 translate-x-1/2 blur-[1px]'
+                alt='background graphic'
             />
             <Image
                 src='/svg/car-left.svg'
                 width={100}
                 height={100}
                 className='absolute z-[-10] top-0 right-1/2 translate-x-[200%] blur-[2px]'
+                  alt='background graphic'
             />
             <Image
                 src='/svg/car-right.svg'
                 width={100}
                 height={100}
                 className='absolute z-[-10] top-0 right-1/2 translate-x-[-100%] blur-[2px]'
+                  alt='background graphic'
             />
         </>
     );
@@ -196,7 +199,7 @@ const Flota = () => {
     };
 
     return (
-        <div className='h-screen w-full relative  '>
+        <div className='min-h-screen w-screen relative  '>
             <Header titleName={'nasza flota'} headerBgContent={<FlotaBgContent />} />
             <div className='flex flex-col items-center backdrop-filter backdrop-blur-xs mx-8 md:mt-0  '>
                 <h2
