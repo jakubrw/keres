@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Header from '@/app/components/Header';
-import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { Pacifico } from 'next/font/google';
+import { Merienda } from 'next/font/google';
 
-const pacifico = Pacifico({ subsets: ['latin'], weight: ['400'] });
+const pacifico = Merienda({ subsets: ['latin'], weight: ['900'] });
 
 const FlotaBgContent = () => {
     return (

@@ -12,7 +12,7 @@ function Parallax() {
 						style={{ objectFit: 'cover' }}
 						fill
 						absolute='true'
-						src={'/svg/test/bg.svg'}
+						src={'/svg/parallax/bg.svg'}
 						className='z-30 
 						'
 						loading='eager'
@@ -22,7 +22,7 @@ function Parallax() {
 					<Image
 						fill
 						absolute='true'
-						src={'/svg/test/5.svg'}
+						src={'/svg/parallax/5.svg'}
 						className='z-30 parallax parallax-5'
 						loading='lazy'
 						alt='part of landscape graphic'></Image>
@@ -31,7 +31,7 @@ function Parallax() {
 					<Image
 						fill
 						absolute='true'
-						src={'/svg/test/4.svg'}
+						src={'/svg/parallax/4.svg'}
 						className='z-10 parallax parallax-4'
 						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
@@ -42,7 +42,7 @@ function Parallax() {
 					<Image
 						fill
 						absolute='true'
-						src={'/svg/test/3.svg'}
+						src={'/svg/parallax/3.svg'}
 						className='z-10 parallax parallax-3'
 						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
@@ -50,7 +50,7 @@ function Parallax() {
 					<Image
 						fill
 						absolute='true'
-						src={'/svg/test/2.svg'}
+						src={'/svg/parallax/2.svg'}
 						className='z-10 parallax parallax-2'
 						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>
@@ -58,7 +58,7 @@ function Parallax() {
 					<Image
 						fill
 						absolute='true'
-						src={'/svg/test/1.svg'}
+						src={'/svg/parallax/1.svg'}
 						className='z-10 parallax parallax-1'
 						alt='part of landscape graphic'></Image>
 				</ParallaxBannerLayer>

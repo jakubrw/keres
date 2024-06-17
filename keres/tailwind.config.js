@@ -9,6 +9,9 @@ module.exports = {
 	plugins: [require('flowbite/plugin')],
 	theme: {
 		extend: {
+			fontFamily: {
+				lato: ['Lato', 'sans-serif'],
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

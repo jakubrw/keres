@@ -10,11 +10,10 @@
 
 body {
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	
 }
 
-h2 {
-	font-family: var(--font-montserrat-mono);
-}
+
 @import url('swiper/css');
 @import url('swiper/css/pagination');
 
@@ -43,3 +42,4 @@ h2 {
 	background-image: url(../../public/svg/animation/animation.jpg);
 	z-index: -30;
 }
+

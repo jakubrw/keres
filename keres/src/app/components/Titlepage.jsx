@@ -15,13 +15,29 @@ const TitlePage = () => {
 	const counter = useRef(null)
 	const isInView = useInView(ref, { once: true })
 
+	const handleScroll = () => {
+		container.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
 	return (
 		<div className='flex flex-col items-center'>
-			<div className='h-[120vh] w-full relative overflow-hidden'>
+			<motion.div
+				className='h-[120vh] w-full relative overflow-hidden'
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}>
 				<div className='absolute'>
-					<div className='h-screen w-screen relative'>
+					<motion.div
+						className='h-screen w-screen relative'
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 1.2 }}>
 						<div className='h-[60vh] w-auto aspect-[3/4] absolute-center z-[100]'>
-							<div className='w-[40vw] aspect-square relative m-auto md:w-[30vw] lg:w-[20vw] xl:w-[15vw]'>
+							<motion.div
+								className='w-[40vw] aspect-square relative m-auto md:w-[30vw] lg:w-[20vw] xl:w-[15vw]'
+								initial={{ opacity: 0, scale: 0.8 }}
+								animate={{ opacity: 1, scale: 1 }}
+								transition={{ duration: 1.5 }}>
 								<Image
 									src='/keres.svg'
 									fill
@@ -29,9 +45,13 @@ const TitlePage = () => {
 									alt='keres logo'
 									priority={true}
 								/>
-							</div>
+							</motion.div>
 							<div className='absolute top-1/2 transform -translate-y-1/2 w-full z-0'>
-								<div className='flex flex-col items-center text-blue-dark'>
+								<motion.div
+									className='flex flex-col items-center text-blue-dark'
+									initial={{ opacity: 0, y: 50 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 1 }}>
 									<h1 className='text-6xl uppercase font-black lg:text-7xl xl:text-8xl'>keres</h1>
 									<Typewriter
 										options={{
@@ -46,20 +66,24 @@ const TitlePage = () => {
 										}}
 									/>
 									<ChevronDoubleDownIcon
-										className='h-8 text-neutral-600 animate-bounce mt-4'
+										onClick={handleScroll}
+										className='h-8 text-neutral-600 animate-bounce mt-4 cursor-pointer'
 										aria-label='Scroll down'
 									/>
-								</div>
+								</motion.div>
 							</div>
 						</div>
 						<Parallax />
-					</div>
+					</motion.div>
 				</div>
-			</div>
+			</motion.div>
 
-			<section
+			<motion.section
 				ref={container}
-				className='min-h-screen -translate-y-px text-lg flex flex-col items-center px-4 md:mx-[10%] md:w-1/2 '>
+				className='min-h-screen -translate-y-px text-lg flex flex-col items-center px-4 md:min-h-full md:mx-[10%] md:w-1/2 '
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 1, duration: 1.2 }}>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -75,9 +99,13 @@ const TitlePage = () => {
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.6, ease: 'easeOut' }}
-					className='flex min-h-screen flex-col items-center rounded-lg p-8 md:h-full lg:h-full xl:h-full bg-white bg-opacity-80 shadow-xl md:min-h-full md:mb-4'>
+					className='flex h-full flex-col items-center rounded-lg p-8 md:h-full lg:h-full xl:h-full bg-white bg-opacity-80 shadow-xl  md:mb-4'>
 					<div className=''>
-						<div className='mb-5 antialiased'>
+						<motion.div
+							className='mb-5 antialiased'
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}>
 							<p>
 								Realizujemy zlecenia spedycji i transportu drogowego każdego typu. Naszą flagową ofertą
 								są transporty ekspresowe, dostawy oraz doładunki i transporty nienormatywne. Naszym
@@ -85,37 +113,53 @@ const TitlePage = () => {
 								Rozwijamy zaplecze spedycyjno-logistyczne, stale powiększamy naszą flotę samochodową
 								oraz zespół pracowników.
 							</p>
-						</div>
-						<div className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40 w-full overflow-hidden rounded-lg bg-gradient-to-r from-yellow-light to-green-light shadow-md'>
+						</motion.div>
+						<motion.div
+							className='ring-1 ring-slate-900/5 h-auto bg-white bg-opacity-40 w-full overflow-hidden rounded-lg bg-gradient-to-r from-yellow-light to-green-light shadow-md'
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 1.5, duration: 1 }}>
 							<div
 								ref={ref}
 								style={{
 									opacity: isInView ? 1 : 0,
 									transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
 								}}
-								className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
-								<Counter valueCounter={12000} state={isInView} delay={1} />
-								<p ref={counter} className='text-lg uppercase font-bold'>
-									tyś. przejechanych kilometrów
-								</p>
-								<Counter valueCounter={7200} state={isInView} delay={100} />
-								<p className='text-lg uppercase font-bold'>wykonanych zleceń</p>
-								<Counter valueCounter={2190} state={isInView} delay={200} />
-								<p className='text-lg font-bold uppercase'>dni współpracy</p>
-								<Counter id={4} valueCounter={26} state={isInView} delay={300} />
-								<p className='text-lg uppercase font-bold'>odwiedzonych krajów</p>
+								className='px-8 py-6 text-center text-5xl overflow-hidden flex flex-col [&>*]:p-2 md:flex-row md:[&>*]:w-1/2 md:[&>*]:p-4 md:flex-wrap '>
+								<div>
+									<Counter valueCounter={12000} state={isInView} delay={1} />
+									<p ref={counter} className='text-lg uppercase font-bold'>
+										tyś. przejechanych kilometrów
+									</p>
+								</div>
+								<div>
+									<Counter valueCounter={7200} state={isInView} delay={100} />
+									<p className='text-lg uppercase font-bold'>wykonanych zleceń</p>
+								</div>
+								<div>
+									<Counter valueCounter={2190} state={isInView} delay={200} />
+									<p className='text-lg font-bold uppercase'>dni współpracy</p>
+								</div>
+								<div>
+									<Counter id={4} valueCounter={26} state={isInView} delay={300} />
+									<p className='text-lg uppercase font-bold'>odwiedzonych krajów</p>
+								</div>
 							</div>
-						</div>
-						<div className='mt-4 p-4 bg-gradient-to-r from-yellow-light to-green-dark rounded-lg italic shadow-lg '>
-							<p>
+						</motion.div>
+						<motion.div
+							className='mt-4 p-4 bg-gradient-to-r from-yellow-light to-green-dark rounded-lg italic shadow-lg'
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1 }}>
+							<p className='text-center'>
 								Wyróżniamy się naszym indywidualnym podejściem do powierzonych nam zleceń i stałym
 								zaangażowaniem. W związku z tym jeśli są sytuacje niespodziewane działamy ekspresowo,
 								ponieważ wiemy o tym od razu!
 							</p>
-						</div>
+						</motion.div>
 					</div>
 				</motion.div>
-			</section>
+			</motion.section>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

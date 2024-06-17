@@ -1,6 +1,5 @@
 'use client'
 
-import CardOffert from '@/app/components/CardOffert'
 import Header from '../app/components/Header'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
@@ -104,26 +103,32 @@ const Oferta = () => {
 							'--swiper-pagination-bullet-size': '6px',
 							'--swiper-pagination-bullet-horizontal-gap': '6px',
 						}}
-						className='aspect-square md:aspect-[3/2] md:max-w-[600px] h-full px-4 '>
+						className='aspect-[3/2]  md:max-w-[600px] h-full px-4 '>
 						{offersArr.map((x, index) => (
 							<SwiperSlide
 								key={index}
-								className='text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl bg-gradient-to-r from-yellow-light to-green-dark p-6 shadow-lg'>
-								<CardOffert key={index} cardTitle={x.cardTitle} cardText={x.cardText} />
+								className='text-black font-solid flex flex-col items-center justify-evenly overflow-hidden rounded-xl bg-gradient-to-r from-yellow-light to-green-dark p-6 shadow-lg'>
+								<h3 className='text-xl font-bold text-gray-800 mb-2 uppercase'>{x.cardTitle}</h3>
+								<p className='text-gray-700'>{x.cardText}</p>
+								<Link
+									href={`/oferta/${x.cardTitle}`}
+									className=' bg-gradient-to-r from-teal-500 to-green-500 text-white text-center py-2 px-4 rounded-lg shadow-md hover:from-teal-600 hover:to-green-600 transition duration-200 w-2/3'>
+									Kliknij po więcej
+								</Link>
 							</SwiperSlide>
 						))}
 					</Swiper>
 				</div>
-				<div className='hidden aspect-[4/3] w-full md:block md:w-[70vw] overflow-hidden lg:aspect-[5/3] xl:aspect-[5/2]'>
+				<div className='hidden aspect-[4/3] w-full  md:block md:w-[70vw] overflow-hidden lg:aspect-[5/3] xl:aspect-[5/2]'>
 					<div className='flex flex-row items-center justify-center h-full bg-gradient-to-r from-yellow-light to-green-dark overflow-hidden rounded-xl shadow-xl'>
 						{offersArr.map((x, index) => (
 							<motion.div
 								key={index}
 								className={`h-full ${
 									expandedCard === index ? 'w-full' : 'w-1/5'
-								} flex flex-col items-center justify-center text-black font-solid flex flex-col items-space justify-evenly overflow-hidden rounded-xl p-4 cursor-pointer border border-gray-300 `}
+								} flex flex-col items-center justify-center text-black font-solid flex flex-col items-space justify-evenly overflow-hidden  p-4 cursor-pointer border border-gray-300 `}
 								onClick={() => handleCardClick(index)}
-								whileTap={{ scale: 0.95 }}
+								whileTap={{ scale: 1 }}
 								animate={{ width: expandedCard === index ? '100%' : '20%' }}
 								transition={{ duration: 0.3 }}>
 								<div>
@@ -133,7 +138,9 @@ const Oferta = () => {
 											animate={{ opacity: 1 }}
 											transition={{ duration: 0.2, delay: 0.3 }}
 											className='flex flex-col items-center'>
-											<h2 className='font-bold uppercase text-lg lg:my-4 md:text-xl'>{x.cardTitle}</h2>
+											<h2 className='font-bold uppercase text-lg lg:my-4 md:text-xl'>
+												{x.cardTitle}
+											</h2>
 											<p className='self-stretch text-center my-2 lg:px-4'>{x.cardText}</p>
 											<Link
 												href={`/oferta/${x.cardTitle}`}
@@ -149,7 +156,7 @@ const Oferta = () => {
 						))}
 					</div>
 				</div>
-				<div className='px-4 md:w-[70vw] my-4 bg-white bg-opacity-60 p-6 rounded-lg shadow-md'>
+				<div className='px-4 md:w-[70vw] m-4 bg-white bg-opacity-60 p-6 rounded-lg shadow-md'>
 					<ul className='list-disc list-inside'>
 						<li>
 							Oferujemy nasze sprawdzone rozwiązania z zakresu logistyki oraz spedycji, dopasujemy

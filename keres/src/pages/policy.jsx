@@ -35,7 +35,7 @@ const Policy = () => {
 					<p>
 						Podstawą prawną przetwarzania danych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Okres
 						przechowywania danych: Twoje dane będą przechowywane przez okres niezbędny do udzielenia
-						odpowiedzi na Twoje zapytanie oraz w celach archiwalnych, przez okres nie dłuższy niż 2 lata.
+						odpowiedzi na Twoje zapytanie oraz w celach archiwalnych, przez okres nie dłuższy niż rok.
 						Prawa osoby, której dane dotyczą: Masz prawo do: Dostępu do swoich danych oraz otrzymania ich
 						kopii Sprostowania swoich danych Usunięcia danych Ograniczenia przetwarzania danych Przenoszenia
 						danych Wycofania zgody na przetwarzanie danych w dowolnym momencie Wniesienia skargi do organu

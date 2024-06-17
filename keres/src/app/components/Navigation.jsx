@@ -31,7 +31,7 @@ const Navbar = () => {
 	const NavContainer = (
 		<>
 			{navStatus === 'menu' && (
-				<div className='max-h-screen w-full p-5 bg-yellow-light absolute z-[200] bottom-0 md:hidden'>
+				<div className='max-h-screen w-full p-5 bg-yellow-light absolute z-[200] bottom-0 md:hidden '>
 					<div
 						onClick={() => handleNavClick(false, null)}
 						className='flex flex-col justify-center items-center uppercase text-4xl gap-8 bold mb-20'>
@@ -59,7 +59,7 @@ const Navbar = () => {
 				</div>
 			)}
 			{navStatus === 'form' && (
-				<div className='fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-50'>
+				<div className='fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-50 '>
 					<div className='bg-yellow-light p-5 rounded-lg w-full max-w-md mx-auto'>
 						<form onSubmit={onSubmit} className='flex flex-col'>
 							<ContactForm />
@@ -110,7 +110,7 @@ const Navbar = () => {
 				{navOpen && NavContainer}
 				<nav
 					id='nav'
-					className='hidden md:flex fixed w-full justify-between items-center bg-yellow-light p-2 z-[150] '>
+					className='hidden md:flex fixed w-full justify-between items-center bg-yellow-light p-2 z-[150] shadow-[rgba(0,0,15,0.2)_0px_1px_80px_0px]'>
 					<div className='flex space-x-10  text-center px-2'>
 						<Link href='/' className='text-2xl p-0'>
 							<Image src={'/keres.svg'} height={50} width={50} alt='company logo' />

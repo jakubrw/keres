@@ -1,6 +1,5 @@
 import { PhotoIcon } from '@heroicons/react/24/outline'
 import dynamic from 'next/dynamic'
-import { useEffect } from 'react'
 
 
 const DynamicLeaflet = dynamic(() => import('@/app/components/Leaflet'), {
@@ -9,7 +8,6 @@ const DynamicLeaflet = dynamic(() => import('@/app/components/Leaflet'), {
 })
 
 const LeafletDynamic = () => {
-	// useEffect(() => { const parentWidth = document.getElementByName('').parentElement.offsetWidth;})
 	return <DynamicLeaflet />
 }
 
