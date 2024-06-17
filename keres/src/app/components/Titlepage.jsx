@@ -45,7 +45,10 @@ const TitlePage = () => {
 											deleteSpeed: 35,
 										}}
 									/>
-									<ChevronDoubleDownIcon className='h-8 text-neutral-600 animate-bounce mt-4' aria-label="Scroll down" />
+									<ChevronDoubleDownIcon
+										className='h-8 text-neutral-600 animate-bounce mt-4'
+										aria-label='Scroll down'
+									/>
 								</div>
 							</div>
 						</div>
@@ -56,26 +59,23 @@ const TitlePage = () => {
 
 			<section
 				ref={container}
-				className='min-h-screen -translate-y-px text-lg flex flex-col items-center px-4 md:mx-[10%] md:w-1/2 '
-			>
-				<motion.div 
+				className='min-h-screen -translate-y-px text-lg flex flex-col items-center px-4 md:mx-[10%] md:w-1/2 '>
+				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='my-4 p-8 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg shadow-lg'
-				>
+					className='my-4 p-8 text-center text-xl italic bg-gradient-to-r from-yellow-light to-green-light rounded-lg shadow-lg'>
 					<p>
 						Naszą misją jest Państwa zadowolenie z wykonywanych przez nas usług i utrzymywanie stałych
 						współprac. Zaufanie którym nas obdarzacie jest siłą napędową do stałego doskonalenia i
 						podnoszenia kwalifikacji.
 					</p>
 				</motion.div>
-				<motion.div 
+				<motion.div
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.6, ease: 'easeOut' }}
-					className='flex min-h-screen flex-col items-center rounded-lg p-8 md:h-full lg:h-full xl:h-full bg-white bg-opacity-80 shadow-xl md:min-h-full md:mb-4'
-				>
+					className='flex min-h-screen flex-col items-center rounded-lg p-8 md:h-full lg:h-full xl:h-full bg-white bg-opacity-80 shadow-xl md:min-h-full md:mb-4'>
 					<div className=''>
 						<div className='mb-5 antialiased'>
 							<p>
@@ -93,8 +93,7 @@ const TitlePage = () => {
 									opacity: isInView ? 1 : 0,
 									transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
 								}}
-								className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'
-							>
+								className='space-y-3 px-8 py-6 text-center text-5xl overflow-hidden flex flex-col'>
 								<Counter valueCounter={12000} state={isInView} delay={1} />
 								<p ref={counter} className='text-lg uppercase font-bold'>
 									tyś. przejechanych kilometrów
@@ -121,8 +120,7 @@ const TitlePage = () => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1.1, duration: 0.6 }}
-				className='w-full flex flex-col items-center'
-			>
+				className='w-full flex flex-col items-center'>
 				<Footer />
 			</motion.div>
 		</div>
