@@ -92,16 +92,7 @@ const trucksTypes = [
         AdditionalInformations: '',
         ImageAlias: 'szarak',
     },
-    {
-        CarName: 'Szprotka',
-        Capacity: 1,
-        PalletsCapacity: '6',
-        Dimensions: [437, 170, 190],
-        LoadType: ['drzwi tył', 'drzwi bok'],
-        ConstructionType: 'blaszak',
-        AdditionalInformations: '',
-        ImageAlias: 'szprota',
-    },
+    
     {
         CarName: 'Caddy',
         Capacity: 0.5,
