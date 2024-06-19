@@ -125,7 +125,8 @@ const TitlePage = () => {
 									opacity: isInView ? 1 : 0,
 									transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
 								}}
-								className='px-8 py-6 text-center text-5xl overflow-hidden flex flex-col [&>*]:p-2 md:flex-row md:[&>*]:w-1/2 md:[&>*]:p-4 md:flex-wrap '>
+								className='px-8 py-6 text-center text-5xl overflow-hidden flex flex-col [&>*]:p-2 
+								xl:px-2 xl:flex-row xl:[&>*]:w-1/2 zl:[&>*]:p-4 xl:flex-wrap '>
 								<div>
 									<Counter valueCounter={12000} state={isInView} delay={1} />
 									<p ref={counter} className='text-lg uppercase font-bold'>
